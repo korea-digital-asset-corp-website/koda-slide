@@ -1,0 +1,808 @@
+---
+version: alpha
+name: "koda-presentation-design-system"
+description: >-
+  KODA 발표자료는 기관 금융의 신뢰감과 디지털 자산 기술의 정밀함을 넓은 흰 캔버스,
+  굵은 Pretendard 제목, 밝은 KODA 그린을 중심으로 한 제한된 팔레트, 로고에서 파생한
+  평면 기하 도형(슬래시 평행사변형·원)으로 표현한다. 핵심 문구는 민트 하이라이터 바로
+  강조하고, 한 슬라이드에 하나의 주장과 하나의 증거군만 둔다. 얇은 테두리·연한 민트 면의
+  절제된 카드와 수치·차트·제품 화면·인증 자료의 명확한 정렬로 설득력을 만든다.
+
+format:
+  aspectRatio: "16:9"
+  slideWidth: "13.333in / 960pt"
+  slideHeight: "7.5in / 540pt"
+  renderResolution: "1920 × 1080 px (16:9 Full HD) — HTML 화면·PDF 출력 기준 해상도"
+  safeArea:
+    left: "48pt"
+    right: "48pt"
+    top: "32pt"
+    bottom: "32pt"
+  grid:
+    columns: 12
+    gutter: "18pt"
+    contentWidth: "864pt"
+    contentHeight: "476pt"
+
+colors:
+  # 브랜드 그린 — 공식 로고/심볼 에셋(Logo.svg / symbol.svg) 및 theme.js 기준
+  brand-highlight: "#00D998"        # 밝은 KODA 그린 · 아이콘·막대·하이라이터·fill·도형(면/글리프)
+  brand-highlight-dark: "#00B27E"
+  brand-highlight-marker: "#9FEAD0" # 하이라이터 바
+  brand-highlight-soft: "#E6FBF5"   # 카드·아이콘 타일·표 헤더·강조 면
+
+  # KODA Design System (theme.js) — primary scale
+  primary-pale: "#DEFFE5"
+  primary-light: "#AEF5CA"
+  primary-sub: "#50BF83"
+  primary: "#02794E"                # primary/500 (primary-main) · 텍스트 위 진한 그린 강조
+  primary-dark: "#025537"
+
+  # DS green scale — 초록 '스트로크' 전용
+  green-sub: "#55C9A4"              # 초록 테두리/강조 스트로크 기본색
+
+  # DS red scale — 부정·위험 전용(라벨 병행)
+  danger: "#F5405B"                 # red-main
+  danger-dark: "#E51244"
+  danger-soft: "#FFEDF0"            # red-pale
+
+  action-dark: "#00160F"
+  canvas: "#FFFFFF"
+  canvas-muted: "#F1F3F2"
+  surface-inverse: "#000000"
+
+  ink: "#000000"
+  ink-strong: "#00160F"
+  ink-muted: "#66736F"
+  ink-subtle: "#99A29F"
+  ink-inverse: "#FFFFFF"
+
+  hairline: "#E8EAE9"
+  hairline-strong: "#B3B9B7"
+  data-neutral-1: "#33453F"
+  data-neutral-2: "#808B87"
+  data-neutral-3: "#B3B9B7"
+
+typography:
+  cover-title:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "42pt"
+    fontWeight: 700
+    lineHeight: 1.14
+    letterSpacing: "-0.3pt"
+  section-title:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "34pt"
+    fontWeight: 700
+    lineHeight: 1.18
+    letterSpacing: "-0.2pt"
+  slide-title:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "28pt"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "-0.1pt"
+  statement:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "32pt"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "-0.15pt"
+  metric:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "56pt"
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: "-0.5pt"
+  body:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "18pt"
+    fontWeight: 400
+    lineHeight: 1.35
+    letterSpacing: "0"
+  body-strong:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "18pt"
+    fontWeight: 600
+    lineHeight: 1.35
+    letterSpacing: "0"
+  body-sm:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "14pt"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "0"
+  data-label:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "12pt"
+    fontWeight: 500
+    lineHeight: 1.3
+    letterSpacing: "0"
+  caption:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "10pt"
+    fontWeight: 400
+    lineHeight: 1.35
+    letterSpacing: "0"
+
+rounded:
+  none: "0"
+  control: "3pt"
+  media: "6pt"
+  card: "8pt"
+
+spacing:
+  unit: "4pt"
+  xxs: "4pt"
+  xs: "8pt"
+  sm: "12pt"
+  md: "18pt"
+  lg: "24pt"
+  xl: "32pt"
+  xxl: "48pt"
+
+components:
+  deck-wordmark:
+    width: "72pt"
+    minimumWidth: "60pt"
+    placement: "top-left on cover only; top-right on all other slides (TOC, section, content, closing, disclaimer)"
+  kicker:
+    typography: "{typography.data-label}"
+    textColor: "{colors.ink-subtle}"
+    placement: "top-left, above the slide title"
+    maxLines: 1
+    note: "슬라이드가 속한 주제/섹션을 알려주는 회색 eyebrow 라벨"
+  slide-title:
+    typography: "{typography.slide-title}"
+    textColor: "{colors.ink}"
+    maxLines: 2
+    maxWidth: "720pt"
+  source-note:
+    typography: "{typography.caption}"
+    textColor: "{colors.ink-muted}"
+    position: "bottom-left within safe area"
+    maxLines: 2
+  page-number:
+    typography: "{typography.caption}"
+    textColor: "{colors.ink-muted}"
+    position: "bottom-right"
+  metric-block:
+    valueTypography: "{typography.metric}"
+    valueColor: "{colors.primary}"
+    labelTypography: "{typography.body-strong}"
+    backgroundColor: "transparent"
+    border: "none"
+  evidence-row:
+    backgroundColor: "transparent"
+    borderBottom: "1pt solid {colors.hairline}"
+    padding: "14pt 0"
+  screenshot-frame:
+    backgroundColor: "{colors.canvas}"
+    rounded: "{rounded.media}"
+    border: "1pt solid {colors.hairline}"
+    shadow: "none"
+  chart:
+    plotBackground: "transparent"
+    gridColor: "{colors.hairline}"
+    labelColor: "{colors.data-neutral-1}"
+    primarySeries: "{colors.brand-highlight}"
+    emphasisSeries: "{colors.primary}"
+    border: "none"
+    categoricalPalette: "개체 구분이 필요한 비교 차트 예외 (§8 참조)"
+  table:
+    backgroundColor: "transparent"
+    headerBackground: "{colors.brand-highlight-soft}"
+    headerColor: "{colors.ink-strong}"
+    headerBorder: "1.5pt solid {colors.ink-strong}"
+    rowBorder: "0.75pt solid {colors.hairline}"
+    highlightedRow: "{colors.brand-highlight-soft}"
+  highlight-marker:
+    color: "{colors.brand-highlight-marker}"
+    height: "0.55em"
+    placement: "핵심 어구 뒤 baseline 근처, 텍스트 하단을 덮는 형광펜 형태"
+    maxPerSlide: 2
+    note: "제목·핵심 문장·차트 핵심 값 등 한두 어구에만 사용; 문장 전체를 덮지 않음"
+  brand-shape:
+    fill: "{colors.brand-highlight}"
+    shapes: "슬래시 평행사변형, 원 (KODA 로고 마크에서 파생)"
+    style: "단색 평면, glow·shadow·gradient 없음"
+    placement: "표지 우측, 섹션 전면 등 텍스트와 겹치지 않는 여백"
+  card:
+    backgroundColor: "{colors.canvas} 또는 {colors.brand-highlight-soft}"
+    border: "1pt solid {colors.hairline}"
+    rounded: "{rounded.card}"
+    shadow: "none"
+    padding: "18~24pt"
+    note: "얇은 테두리 또는 연한 민트 면의 절제된 카드; 그림자·강한 색면은 사용하지 않음"
+  callout-box:
+    backgroundColor: "{colors.canvas}"
+    border: "1pt solid {colors.brand-highlight}"
+    rounded: "{rounded.card}"
+    padding: "18~24pt"
+    note: "보조 설명·출처를 담는 녹색 테두리 상자"
+  icon-tile:
+    backgroundColor: "{colors.brand-highlight-soft}"
+    iconColor: "{colors.brand-highlight}"
+    rounded: "{rounded.control}"
+    size: "40~56pt"
+  contact-row:
+    typography: "{typography.body}"
+    iconColor: "{colors.ink-subtle}"
+    placement: "closing 슬라이드 하단, 이메일·전화·텔레그램·웹 순 수평 정렬"
+---
+
+# Presentation Design System: KODA
+
+> - 상태: `초안`
+> - 마지막 검증일: `2026-07-19`
+> - 적용 범위: `PowerPoint · Keynote · Google Slides · PDF 발표자료`
+> - 기준 원본: `KODA Slide Template (공식 발표 템플릿) · KODA Design System (theme.js) · 공식 로고/심볼 에셋 · KODA Public Web Design System`
+
+이 문서는 KODA 브랜딩이 적용된 발표자료를 일관되게 만들기 위한 슬라이드 전용 기준입니다.
+웹 디자인 시스템의 시각 언어를 그대로 확대 복제하지 않고, 프로젝터·화상회의·PDF 환경에서
+읽히는 크기와 정보 밀도로 변환합니다. 웹에서 직접 관찰한 브랜드 토큰과 발표자료를 위한
+새로운 운영 규칙을 구분해 기록합니다.
+
+## 1. Brand Translation
+
+KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”이 아니라, 법인·기관 청중이
+주장과 근거를 빠르게 이해하고 신뢰하게 만드는 것입니다. 슬라이드마다 시선을 끄는 장치보다
+명확한 메시지, 수치의 기준 시점, 출처, 인증과 제품 증거를 우선합니다.
+
+| 웹의 시각 신호 | 발표자료 변환 규칙 |
+|---|---|
+| 넓은 흰 캔버스 | 16:9 슬라이드에 48pt 안전 여백과 넓은 비어 있는 영역 유지 |
+| 55px 굵은 히어로 제목 | 42pt cover, 28pt content title로 변환 |
+| KODA 로고의 슬래시 마크 | 표지·섹션 전면에 슬래시 평행사변형·원 등 평면 기하 도형으로 사용 |
+| 밝은 KODA 그린 | 섹션 전면, 도형, 아이콘, 막대, 하이라이터의 대표 브랜드 색으로 사용 |
+| 강조 텍스트 | 핵심 어구 뒤에 연한 민트 하이라이터 바를 깔아 강조 |
+| 짙은 녹색 | 흰 배경에서 대비가 더 필요한 작은 텍스트·선의 보조 강조로만 사용 |
+| 콘텐츠 그룹 | hairline·정렬·여백을 기본으로 하되, 필요 시 얇은 테두리·연한 민트 카드 허용 |
+| 시장 수치·인증·보험·주주사 | 주장 바로 옆에 출처가 있는 증거로 배치 |
+
+**Presentation characteristics**
+
+- 한 슬라이드에 한 문장으로 요약 가능한 핵심 메시지 하나
+- 흰색·검정·밝은 KODA 그린에 집중한 제한된 팔레트
+- 큰 한국어 제목과 실제 수치가 먼저 보이는 계층
+- 핵심 어구는 민트 하이라이터 바로만 강조하고 문장 전체를 칠하지 않음
+- 카드는 얇은 테두리·연한 민트 면으로 절제해 사용
+- 차트·표·스크린샷을 장식이 아닌 검증 자료로 사용
+- 3D 차트, 네온 크립토 그래픽, glow·gradient 도형을 사용하지 않음
+
+## 2. Slide Format & Grid
+
+### Canvas
+
+- **Aspect ratio:** `16:9`
+- **Slide size:** `13.333 × 7.5in` 또는 `960 × 540pt`
+- **Safe area:** 좌우 `48pt`, 상하 `32pt`
+- **Content area:** `864 × 476pt`
+- **Grid:** `12 columns`, `18pt` gutter
+- **Alignment:** 제목, 본문, 차트, 출처는 반드시 동일한 12-column 축 중 하나에 맞춤
+
+### Primary Zones
+
+| Zone | Position | Rule |
+|---|---|---|
+| Brand | 상단 32pt 안쪽 | 표지만 좌측, 그 외 모든 슬라이드는 우측 상단 wordmark |
+| Kicker | 상단 좌측, 제목 위 | 12~14pt 회색 eyebrow 라벨로 슬라이드가 속한 주제를 표시 (콘텐츠·데이터 슬라이드) |
+| Title | 상단 56~104pt | 최대 2줄, 본문보다 최소 20pt 위계 차이 |
+| Content | 120~482pt | 텍스트·데이터·미디어의 핵심 영역 |
+| Source | 하단 496~520pt | 10pt, 최대 2줄, 좌측 정렬 |
+| Folio | 우하단 | 10pt 페이지 번호; 공식 템플릿 마스터에는 미포함이며 필요 시에만 추가 |
+
+### Layout Rules
+
+- 기본 분할은 `7:5`, `6:6`, `4:8` 중 하나만 사용합니다.
+- 한 슬라이드에 3개를 초과하는 독립 열을 만들지 않습니다.
+- 콘텐츠 블록 사이 최소 간격은 `24pt`, 제목과 본문 사이는 `18~24pt`입니다.
+- 텍스트가 넘치면 자동 축소하지 말고 문장을 편집하거나 슬라이드를 나눕니다.
+- 본문을 `14pt` 미만으로 줄이지 않습니다. 출처·각주만 `10pt`까지 허용합니다.
+- 슬라이드 가장자리로 이미지를 흘릴 때도 로고·텍스트는 safe area 안에 유지합니다.
+
+## 3. Colors
+
+### Core Palette
+
+| Token | Value | Presentation role | Maximum use |
+|---|---:|---|---|
+| `{colors.brand-highlight}` | `#00C68C` | KODA 시그니처 그린: 섹션 전면, 기하 도형, 아이콘, 막대, 결론 강조 | 대표 브랜드 색; 전면 또는 강조 요소 |
+| `{colors.brand-highlight-dark}` | `#00A574` | brand-highlight의 어두운 단계, 도형·데이터 구분 | 보조 계열 |
+| `{colors.brand-highlight-marker}` | `#9FEAD0` | 핵심 어구 뒤 하이라이터 바 | 한 슬라이드 1~2개 어구 |
+| `{colors.brand-highlight-soft}` | `#E6FBF5` | 카드 면, 아이콘 타일, 표 헤더·핵심 행 배경 | 슬라이드 면적의 35% 이내 |
+| `{colors.primary}` | `#006D4C` | 흰 배경에서 대비가 더 필요한 작은 텍스트·선의 보조 강조 | 선택적, 소량 |
+| `{colors.primary-dark}` | `#00573D` | primary의 어두운 단계 | 데이터 구분 |
+| `{colors.action-dark}` | `#00160F` | 강한 제목, 차트 레이블 | 검정 대신 녹색 기운이 필요한 경우 |
+| `{colors.canvas}` | `#FFFFFF` | 기본 슬라이드 배경 | 전체 덱의 70% 이상 |
+| `{colors.canvas-muted}` | `#F1F3F2` | Disclaimer·부록 등 차분한 배경 | 소수 슬라이드 |
+| `{colors.surface-inverse}` | `#000000` | 승인된 반전 마감·부록 | 전체 덱에서 1~2장 이내 |
+
+### Text & Structure
+
+| Token | Value | Use |
+|---|---:|---|
+| `{colors.ink}` | `#000000` | 제목·본문 |
+| `{colors.ink-muted}` | `#66736F` | 보조 설명·출처 |
+| `{colors.ink-subtle}` | `#99A29F` | 장식·비활성 요소 전용 |
+| `{colors.hairline}` | `#E8EAE9` | 표·목록·차트 grid |
+| `{colors.hairline-strong}` | `#B3B9B7` | 축·강한 구분선 |
+
+### Color Rules
+
+- 기본 슬라이드는 white canvas와 black text 조합을 사용합니다.
+- 민트(`#00C68C`) 전체 면에서는 검정 텍스트와 검정 로고를 사용합니다. 이 조합의 대비는 `9.46:1`입니다.
+- 하이라이터 바(`#9FEAD0`)는 검정 텍스트 뒤에만 깔고, 한 슬라이드에서 1~2개 어구로 제한합니다.
+- 짙은 녹색 면 위 텍스트는 흰색을 사용합니다. `#FFFFFF` on `#006D4C`는 `6.38:1`입니다.
+- `#99A29F`는 흰 배경에서 `2.62:1`이므로 본문·출처에 사용하지 않습니다.
+- 단일 지표·추세 차트는 KODA 그린 계열을 포함해 최대 4개 데이터 색만 사용합니다.
+- 시장점유율·경쟁사 비교처럼 개체를 구분해야 하는 차트는 각 기관의 식별색을 쓰는 범주형 팔레트를 예외로 허용합니다(§8 참조).
+- 상태를 색만으로 구분하지 않고 직접 레이블, 선 모양, 데이터 값 중 하나를 함께 사용합니다.
+
+## 4. Typography
+
+### Font Stack
+
+- **Primary:** `Pretendard Variable`
+- **Fallback:** `Pretendard`, `Inter`, `Noto Sans KR`, `Apple SD Gothic Neo`, sans-serif
+- **Numbers:** 동일한 Pretendard를 사용하고 숫자 정렬이 필요한 표에서는 tabular figures 활성화
+- **Distribution:** PPTX에 폰트를 포함할 수 없는 경우 Pretendard 설치 안내와 PDF를 함께 제공
+
+### Type Scale
+
+| Token | Size | Weight | Line height | Use |
+|---|---:|---:|---:|---|
+| `{typography.cover-title}` | `42pt` | `700` | `1.14` | 표지 제목, 최대 3줄 |
+| `{typography.section-title}` | `34pt` | `700` | `1.18` | 섹션 구분 제목 |
+| `{typography.slide-title}` | `28pt` | `700` | `1.2` | 콘텐츠 슬라이드 제목 |
+| `{typography.statement}` | `32pt` | `700` | `1.2` | 결론·핵심 주장 |
+| `{typography.metric}` | `56pt` | `700` | `1.0` | 대표 수치 1개 |
+| `{typography.body}` | `18pt` | `400` | `1.35` | 기본 본문 |
+| `{typography.body-strong}` | `18pt` | `600` | `1.35` | 행 제목·강조 본문 |
+| `{typography.body-sm}` | `14pt` | `400` | `1.4` | 보조 본문·표 셀 |
+| `{typography.data-label}` | `12pt` | `500` | `1.3` | 차트 레이블 |
+| `{typography.caption}` | `10pt` | `400` | `1.35` | 출처·각주·페이지 번호 |
+
+### Writing & Fitting Rules
+
+- 표지 제목은 최대 3줄, 콘텐츠 제목은 최대 2줄입니다.
+- 한 열의 본문은 최대 7줄, bullet은 최대 5개로 제한합니다.
+- 한 bullet은 2줄을 넘지 않으며 문장 끝의 마침표는 일관되게 사용합니다.
+- 긴 설명은 슬라이드에 억지로 넣지 않고 speaker notes나 appendix로 이동합니다.
+- 제목은 “현황”, “시장” 같은 명사보다 `KODA는 시장의 86.6%를 수탁합니다`처럼 결론형 문장을 우선합니다.
+- 수치와 단위는 분리하지 않습니다. `1.5조 원`, `86.6%`, `$20M`처럼 한 덩어리로 유지합니다.
+
+## 5. Logo & Brand Assets
+
+### Wordmark
+
+- 표지에서만 좌상단에 배치하고, TOC·섹션·콘텐츠·마감·Disclaimer 등 그 외 모든 슬라이드는 우상단에 배치합니다.
+- 기본 폭은 `72pt`, 최소 폭은 `60pt`입니다.
+- 슬래시 심벌 + `KODA` 워드마크를 한 세트로 유지하고, 늘이거나 기울이거나 그림자·외곽선·광택을 추가하지 않습니다.
+- 흰 배경에서는 검정 워드마크에 녹색 슬래시, 민트 전면에서는 검정 워드마크에 검정 슬래시를 사용합니다.
+- 로고 주변에는 최소 로고 심벌 높이만큼 비어 있는 공간을 확보합니다. 이는 공식 clear-space 확인 전의 보수적 운영 규칙입니다.
+- 반전 슬라이드에서는 승인된 흰색 로고 파일이 있을 때만 사용합니다. 없으면 민트 또는 흰 배경 마스터를 선택합니다.
+
+### Brand Geometric Shapes
+
+- 로고의 슬래시 마크에서 파생한 평면 기하 도형(기울어진 평행사변형, 원)만 사용합니다.
+- 표지 우측과 섹션 전면 등 텍스트와 겹치지 않는 여백에 배치합니다.
+- 단색 `{colors.brand-highlight}`를 유지하고 glow, drop shadow, gradient, 3D 입체감을 추가하지 않습니다.
+- 도형은 안전 여백을 넘어 가장자리로 흘려도 되지만 로고·텍스트와는 겹치지 않습니다.
+- 도형은 장식이며 정보를 담지 않습니다. 도형 안에 텍스트나 수치를 넣지 않습니다.
+- 임의의 새 도형 언어를 만들지 말고 평행사변형·원·직선 조합 안에서 변주합니다.
+
+### Product Screenshots & Evidence
+
+- 제품 화면은 `6pt` radius, `1pt #E8EAE9` border, shadow 없음이 기본입니다.
+- UI를 왜곡하거나 중요한 데이터를 crop하지 않습니다.
+- 한 슬라이드에 전체 화면 스크린샷은 1개, 상세 crop은 최대 2개만 사용합니다.
+- 인증 마크와 파트너 로고는 동일한 시각 높이로 정렬하되 원본 비율을 유지합니다.
+- 출처와 기준 시점을 해당 수치·차트·인증 자료와 같은 슬라이드에 둡니다.
+
+## 6. Master Layouts
+
+### A. Cover
+
+- Background: `{colors.canvas}`
+- Logo: 좌상단 `84pt`까지 확대 가능
+- Title(`제목`): 좌측 7 columns, `42pt`, 최대 3줄
+- Subtitle(`부제목`): 제목 아래 `18~20pt`, `700`
+- Presenter/contact(`발표자 또는 연락처`): 하단부 좌측, `18pt`, `700`
+- Visual: 우측 상단의 슬래시 평행사변형과 그 아래 원(브랜드 기하 도형, `{colors.brand-highlight}`)
+- Confidential footer: 하단 좌측, `10pt` `{colors.ink-muted}` 저작권·기밀 고지
+- 페이지 번호는 생략
+
+### B. Table of Contents (목차)
+
+- Background: `{colors.canvas}`
+- Logo: 우상단
+- Title(`목차`): 좌상단 `28pt`
+- Agenda: 2 columns(좌 01~03, 우 04~06), 각 항목은 번호(`700`) + 짧은 라벨
+- 번호는 검정, 항목 간 간격은 넉넉하게 유지하고 카드·선을 넣지 않음
+
+### C. Section Divider (주제 표지)
+
+- Background: `{colors.brand-highlight}` 전면 (또는 `{colors.canvas}`)
+- Logo: 우상단 (민트 면에서는 검정)
+- Title: 좌측 세로 중앙, `34pt`, 번호 + 주제명 (예: `01 주제`), 검정 텍스트
+- 민트 면에서는 검정 텍스트만 사용하고 도형은 생략하거나 최소화
+
+### D. Content
+
+- Background: `{colors.canvas}`
+- Logo: 우상단 `60~72pt`
+- Kicker(`주제`): 좌상단, `12~14pt` `{colors.ink-subtle}`, 제목 위
+- Title(`제목`): 그 아래 `28pt`, 최대 폭 `720pt`
+- Body start: `y=124pt` 이후
+- 반복 구조: `제목`(`body-strong`) + bullet 목록; 마지막 강조 bullet은 하이라이터 바 허용
+- 레이아웃: 1열, 2열(6:6), 좌 텍스트 + 우 callout-box 등
+- Source: 좌하단
+
+### E. Data / Evidence
+
+- Kicker + Title은 데이터의 결론을 문장으로 작성
+- 대표 수치 1개는 `56pt` `{colors.brand-highlight}` (더 강한 대비가 필요하면 `{colors.primary}`)
+- 차트는 6~8 columns, 표·설명은 4~6 columns
+- 표 헤더는 `{colors.brand-highlight-soft}` 배경, 하단 강조선 사용
+- 범례보다 직접 레이블을 우선, 차트 핵심 값에는 하이라이터 바 사용 가능
+- 기준 기간과 출처(`출처`)를 각 요소 하단에 명시
+
+### F. Card Grid
+
+- Background: `{colors.canvas}`
+- 3열(카드/아이콘/인증) 또는 2×3 아이콘 그리드
+- 카드: 얇은 `{colors.hairline}` 테두리 + `{rounded.card}`, 또는 `{colors.brand-highlight-soft}` 면
+- 아이콘: `{colors.brand-highlight}` 단색, `icon-tile` 위 또는 카드 중앙
+- 각 카드는 `제목`(`body-strong`) + `내용` 1~2줄로 균형 유지
+
+### G. Closing (감사합니다)
+
+- Background: `{colors.canvas}` (흰 배경 · 전면 그린 사용 금지)
+- Logo: 우상단
+- Statement(`감사합니다`): 좌측 세로 중앙, `34pt`(section-title 크기), `700`, 검정
+- Contact block: 하단 좌측에 고정. 첫 줄은 `발표자 (직함, KODA)` `body-strong` 볼드, 아래 줄은 연락처 행
+- Contact row: 이메일 · 전화번호 · 텔레그램 · `www.kodax.com`을 아이콘과 함께 수평 정렬
+  - 텍스트는 검정 `body`, **아이콘은 `{colors.ink-subtle}` 회색**, 아이콘은 Remix Icon(`mail-fill` · `phone-fill` · `telegram-fill` · `global-line`)
+- 페이지 번호·각주는 생략한다.
+- 여러 CTA 버튼이나 QR 코드를 동시에 배치하지 않음
+
+### H. Disclaimer
+
+- Background: `{colors.canvas-muted}`
+- Logo: 우상단
+- Title(`Disclaimer`): 좌상단, `56pt` 이상 굵은 검정
+- Body: 법적 고지 문단, `12~14pt` `{colors.ink}`/`{colors.ink-muted}`, 문단 간 여백 확보
+
+### I. Appendix
+
+- Background: `{colors.canvas}`
+- Title: `22~24pt`
+- Body/table: `14pt`, source: `10pt`
+- 본문 슬라이드보다 밀도를 높일 수 있지만 한 슬라이드에 표 1개 원칙 유지
+
+## 7. Slide Patterns
+
+| Pattern | Composition | Best use |
+|---|---|---|
+| Agenda | 번호 + 라벨의 2열 목차 | 발표 흐름 안내 |
+| Highlight statement | 큰 결론 문장 + 핵심 어구 하이라이터 바 | 섹션의 핵심 주장 |
+| Executive summary | 3개 결론을 hairline 또는 카드로 구분한 세로/가로 목록 | 의사결정자가 먼저 알아야 할 내용 |
+| Metric spotlight | 56pt 수치 + 18pt 의미 + 출처 | 시장점유율, 수탁고, 보험 한도 |
+| Chart + takeaway | 7:5 차트/설명, 핵심 값 하이라이터 바 | 추세, 구성, 비교 |
+| Chart + table | 좌 차트 + 우 표(민트 헤더) | 비교 데이터와 상세 목록 동시 제시 |
+| Icon card grid | 3열 또는 2×3, 아이콘 타일 + 제목/내용 | 기능·특징·원칙 요약 |
+| Logo / cert wall | 얇은 테두리 카드 안에 로고·인증 마크 정렬 | 파트너, 인증, 컴플라이언스 |
+| Callout box | 좌 본문 + 우 녹색 테두리 상자(제목·내용·출처) | 보조 근거·인용 강조 |
+| Product screenshot | 화면 8 columns + 설명 4 columns | 제품 기능, workflow |
+| Diagram | 연한 민트 영역 위 단색 도형·연결선 | 기술 구조(예: MPC 서명) 설명 |
+| Process | 하나의 수평선 위 3~5단계 | 수탁·승인·출금 흐름 |
+| Comparison | 2개 열, 중앙 hairline, 동일한 행 구조 | Before/After, KODA/대안 |
+| Contact closing | `감사합니다` + 하단 연락처 행 | 미팅 종료·연락처 안내 |
+| Disclaimer | 회색 배경 + 대형 제목 + 법적 고지 문단 | 투자·법적 고지 |
+
+### Highlight Statement
+
+- 큰 결론 문장을 좌측에 배치하고 핵심 어구 한두 곳에만 민트 하이라이터 바를 깝니다.
+- 하이라이터는 텍스트 하단을 덮는 형광펜 형태이며, 문장 전체나 여러 줄을 통째로 칠하지 않습니다.
+- 문장 외 다른 강조 색면을 함께 쓰지 않아 하이라이터가 유일한 시선 유도점이 되게 합니다.
+
+### Executive Summary
+
+- 하나의 세로 목록을 hairline으로 나누거나, 얇은 테두리·연한 민트 카드로 3개 항목을 구분합니다.
+- 각 항목은 2~4단어의 label, 한 문장의 결론, 필요 시 1개 수치로 구성합니다.
+- 세 항목의 시각적 무게를 같게 하되 가장 중요한 수치만 강조합니다.
+
+### Metric Spotlight
+
+- 한 슬라이드의 큰 숫자는 하나만 둡니다.
+- 숫자 아래에는 의미·기준 시점·출처를 순서대로 둡니다.
+- 수치의 소수점 자릿수와 단위는 원 데이터와 동일하게 유지합니다.
+- 숫자를 장식용 원·카드에 넣지 않습니다.
+
+### Process
+
+- 3~5개 단계만 본문에 두고 예외 흐름은 appendix로 이동합니다.
+- 각 단계는 번호, 짧은 동사형 제목, 최대 2줄 설명으로 구성합니다.
+- 화살표를 과장하지 않고 `1.5pt` 녹색 선과 작은 방향 표시만 사용합니다.
+
+## 8. Data Visualization
+
+### General Rules
+
+- 차트 제목은 주제명이 아니라 결론입니다.
+- 3D 차트, gauge, donut 남용, 장식용 pictogram chart를 사용하지 않습니다.
+- 막대는 0에서 시작합니다. 축 절단이 불가피하면 명확히 표시합니다.
+- 추세는 line chart, 크기 비교는 horizontal bar, 구성은 stacked bar를 우선합니다.
+- pie/donut은 3개 이하 범주와 명확한 전체-부분 관계에서만 허용합니다.
+- 한 차트에 최대 4개 계열, grid는 필요한 방향에만 표시합니다.
+- 범례는 가능한 한 제거하고 데이터 선·막대 끝에 직접 레이블을 붙입니다.
+
+### Color Sequence (단일 지표·추세)
+
+1. Primary series: `#00C68C` (KODA 그린)
+2. Emphasis or comparison: `#006D4C`
+3. Comparison: `#33453F`
+4. Secondary comparison: `#808B87`
+5. Context or remainder: `#B3B9B7`
+
+### Categorical Palette (개체 비교 예외)
+
+- 시장점유율·경쟁사 비교처럼 여러 기관을 구분해야 하는 차트는 각 개체의 식별색을 사용합니다.
+- 이 경우 KODA 그린 단색 규칙을 예외로 적용하되, KODA 자신을 나타내는 조각은 브랜드 그린 또는 검정으로 강조해 구분합니다.
+- 범주형 팔레트에서도 3D·glow·gradient를 쓰지 않고 평면 색면과 직접 레이블을 유지합니다.
+
+### Chart Styling
+
+- Plot area: transparent
+- Grid: `0.75pt #E8EAE9`
+- Axis: `1pt #B3B9B7`
+- Data label: `12pt #33453F`
+- Bars: `#00C68C` 단색, square ends 또는 최대 `2pt` radius
+- Primary line: `2.5pt`, comparison line: `1.5pt`
+- Source: 차트 아래 `10pt #66736F`
+- 차트 위 핵심 값·라벨에는 하이라이터 바를 사용할 수 있습니다.
+- 데이터 포인트 강조는 크기 확대보다 직접 레이블과 브랜드 그린을 사용
+
+## 9. Tables
+
+- 표 제목은 슬라이드 제목과 중복하지 않고 표가 증명하는 내용을 설명합니다.
+- Header는 `#E6FBF5` 연한 민트 배경, 600 weight, 하단 `1.5pt #00160F` 선을 사용합니다.
+- Body row는 `0.75pt #E8EAE9` 선으로 구분하고 외곽 상자는 만들지 않습니다.
+- 본문 행 하나를 더 강조해야 하면 같은 `#E6FBF5`를 절제해 사용합니다.
+- 텍스트는 좌측, 수치는 우측, 단위와 기간은 헤더에 표시합니다.
+- 불필요한 소수점과 반복 단위를 제거합니다.
+- 본문 슬라이드는 최대 `6 columns × 8 rows`; 그 이상은 appendix로 이동합니다.
+- 표 셀은 최소 `14pt`, 행 높이는 최소 `28pt`입니다.
+
+## 10. Icons, Diagrams & Shapes
+
+- 아이콘은 단순 선형 또는 채운 단색 스타일을 사용합니다.
+- 아이콘 색은 `{colors.brand-highlight}`를 기본으로 하고, 필요 시 black·`{colors.ink-muted}`로 제한합니다.
+- 아이콘 타일은 `{colors.brand-highlight-soft}` 면 위에 녹색 아이콘을 올린 `icon-tile` 형태를 사용합니다.
+- 아이콘만으로 의미를 전달하지 않고 짧은 label을 함께 둡니다.
+- 연결선은 `1~1.5pt`, 기본 `#B3B9B7`, 핵심 흐름만 `{colors.brand-highlight}`를 사용합니다.
+- 카드·미디어 radius는 `{rounded.card}`(8pt)까지, 작은 컨트롤은 `0~3pt`를 사용합니다.
+- 브랜드 도형은 평행사변형·원·직선 조합의 평면 형태만 사용합니다.
+- pill, speech bubble, 유리질 glassmorphism, glow, gradient, beveled shape를 사용하지 않습니다.
+
+## 11. Motion & Builds
+
+- **Principle:** 등장 효과는 발표자의 설명 순서를 돕고 데이터 관계를 드러낼 때만 사용합니다.
+- **Default transition:** `Fade 0.35s`
+- **Section transition:** `Fade 0.5s`; 브랜드 기하 도형에도 회전·zoom을 추가하지 않음
+- **Build:** bullet, process step, chart annotation을 1개씩 `0.25~0.35s`로 표시
+- **Data transition:** 같은 차트의 기간 변화만 `Morph 0.5s` 사용 가능
+- **Avoid:** bounce, fly-in, spin, random bars, sound, 무한 반복 GIF, 긴 video background
+- **Static fallback:** PDF와 reduced-motion 버전에서도 정보가 모두 보이도록 최종 상태를 완결된 레이아웃으로 설계
+
+## 12. Content & Narrative
+
+### Story Structure
+
+1. 청중이 내려야 할 결정 또는 해결해야 할 문제
+2. 시장·운영 환경과 근거
+3. KODA의 해법과 차별점
+4. 보안·컴플라이언스·성과 증거
+5. 실행 방식과 다음 행동
+
+### Voice
+
+- 직접적이고 차분하며, 전문적이되 과장하지 않습니다.
+- `혁신적인`, `압도적인`, `최고의` 같은 표현은 수치·출처가 같은 슬라이드에 있을 때만 사용합니다.
+- 제목은 보고서형 명사보다 결론형 문장을 우선합니다.
+- 수치에는 기준일, 범위, 출처를 표시합니다.
+- 법적·보안 표현은 공개 검증 자료의 문구와 범위를 넘겨 확대 해석하지 않습니다.
+
+### Copy Limits
+
+- Cover: title 42pt 3줄 + subtitle 2줄
+- Section: title 34pt 2줄 + descriptor 2줄
+- Content: title 28pt 2줄 + body 7줄/열
+- Bullets: 최대 5개, 각 2줄
+- Metric: 숫자 1개 + 설명 2줄 + 출처 2줄
+- Closing: statement 3줄 + contact/next step 2줄
+
+## 13. Accessibility & Delivery
+
+- 기본 본문은 `18pt`, 보조 본문은 `14pt` 이상을 유지합니다.
+- 출처와 각주도 `10pt` 미만으로 줄이지 않습니다.
+- 제목·본문·차트의 읽기 순서를 슬라이드 객체 순서에 반영합니다.
+- 모든 의미 있는 이미지, 차트, 스크린샷에 대체 텍스트를 제공합니다.
+- 색상 외에 직접 레이블, 선 스타일, 값, 아이콘 형태로 계열을 구분합니다.
+- 동영상에는 자막 또는 핵심 내용을 설명하는 정적 대체 슬라이드를 제공합니다.
+- 링크 텍스트는 목적을 설명하고 긴 URL은 source note나 notes로 이동합니다.
+- 발표 전 1080p 화면, 화상회의 공유, 흑백 PDF에서 각각 가독성을 확인합니다.
+- PPTX와 함께 폰트가 포함된 PDF를 전달합니다.
+
+## 14. Do's and Don'ts
+
+### Do
+
+- 한 슬라이드에 하나의 결론과 하나의 증거군만 둡니다.
+- 대표 수치와 출처를 같은 슬라이드에 배치합니다.
+- 흰 캔버스, 굵은 제목, 넓은 여백을 KODA의 기본 인상으로 유지합니다.
+- 핵심 어구는 민트 하이라이터 바로만 강조합니다.
+- 차트·아이콘·막대의 KODA 계열은 밝은 그린으로 일관되게 표시합니다.
+- 브랜드 기하 도형(슬래시·원)은 표지·섹션 전면 등에 절제해 사용해 기억점을 만듭니다.
+- 카드는 얇은 테두리 또는 연한 민트 면으로만 절제해 사용합니다.
+- speaker notes와 appendix를 활용해 본문 밀도를 제어합니다.
+
+### Don't
+
+- 모든 정보를 카드에 넣거나 그림자·강한 색면의 무거운 카드를 만들지 않습니다.
+- 하이라이터 바로 문장 전체나 여러 줄을 통째로 칠하지 않습니다.
+- 다중 그라디언트, glow, 3D 입체 도형으로 크립토 분위기를 만들지 않습니다.
+- 3D chart, gauge, 장식용 donut, infographic icon wall을 사용하지 않습니다.
+- 제목을 `시장 현황`, `서비스 소개` 같은 일반적인 명사로 끝내지 않습니다.
+- 본문을 맞추기 위해 14pt 아래로 자동 축소하지 않습니다.
+- 로고, 인증 마크, 파트너 로고, 브랜드 도형을 왜곡하거나 권한 없이 다시 만들지 않습니다.
+
+## 15. Quality Checklist
+
+### Before Design
+
+- 청중과 의사결정 목적이 한 문장으로 정의되어 있는가?
+- 각 슬라이드의 결론이 제목만 읽어도 이어지는가?
+- 모든 수치의 기준일·범위·출처가 준비되어 있는가?
+- 사용 가능한 KODA 로고·브랜드 기하 도형·제품 화면의 권한이 확인되었는가?
+
+### Visual QA
+
+- 모든 요소가 12-column 축에 정렬되어 있는가?
+- 제목은 2줄, 본문은 열당 7줄 이내인가?
+- 슬라이드마다 강조(하이라이터·브랜드 그린)가 1~2개 이내인가?
+- 카드는 얇은 테두리·연한 민트 면인가? 그림자·pill·gradient가 없는가?
+- 차트와 표의 label이 발표 화면에서 읽히는가?
+
+### Content QA
+
+- 주장과 증거가 같은 슬라이드에 있는가?
+- 수치 단위와 소수점이 일관적인가?
+- 공개 자료의 범위를 넘는 법적·보안 주장이 없는가?
+- speaker notes와 appendix로 옮길 세부 정보가 남아 있지 않은가?
+
+### Export QA
+
+- 16:9 비율과 safe area가 유지되는가?
+- Pretendard가 설치되지 않은 환경에서도 PDF가 동일하게 보이는가?
+- 이미지가 흐리거나 과도하게 압축되지 않았는가?
+- PPTX, PDF, 발표자 노트의 버전과 날짜가 일치하는가?
+- 애니메이션 없이도 PDF에서 의미가 완결되는가?
+
+## 16. Agent Prompt Guide
+
+### Quick Reference
+
+- Format: `16:9 / 960×540pt`
+- Safe area: `48pt horizontal / 32pt vertical`
+- Grid: `12 columns / 18pt gutter`
+- Canvas: `{colors.canvas}`
+- Brand green (도형·아이콘·막대·섹션 면): `{colors.brand-highlight}`
+- Highlighter bar: `{colors.brand-highlight-marker}`
+- Deep accent: `{colors.primary}`
+- Main text: `{colors.ink}`
+- Soft emphasis / card fill: `{colors.brand-highlight-soft}`
+- Cover title: `{typography.cover-title}`
+- Slide title: `{typography.slide-title}`
+- Kicker: `{typography.data-label}` `{colors.ink-subtle}`
+- Body: `{typography.body}`
+- Source: `{typography.caption}`
+- Card radius: `{rounded.card}`
+- Logo: 표지만 좌상단, 그 외 우상단
+
+### Ready-to-use Prompt
+
+```text
+이 DESIGN.md를 KODA 발표자료의 단일 디자인 기준으로 사용하세요.
+16:9 슬라이드와 12-column grid를 사용하고, 한 슬라이드에 하나의 결론과 하나의 증거군만
+배치하세요. 제목은 결론형 문장으로 작성하고 모든 수치에 기준 시점과 출처를 붙이세요.
+흰 캔버스, Pretendard 700 제목, 밝은 KODA 그린(#00C68C) 도형·아이콘·막대·섹션 면,
+핵심 어구의 민트 하이라이터 바(#9FEAD0), 넓은 여백을 유지하세요. 콘텐츠 슬라이드는
+좌상단 회색 kicker + 제목 + 우상단 로고 구조를 따르고, 표지에서만 로고를 좌상단에 두세요.
+카드는 얇은 테두리 또는 연한 민트 면으로 절제해 쓰고, 그라디언트·glow·pill·3D chart·
+입체 도형은 쓰지 마세요. 본문을 14pt 아래로 자동 축소하지 말고 콘텐츠를 편집하거나
+슬라이드를 분리하세요. 차트·표·이미지의 접근성, 읽기 순서, PDF 정적 대체까지 검증하세요.
+```
+
+## 17. Known Gaps
+
+- 공식 KODA Slide Template(PDF)을 기준으로 정렬했으나, 편집 가능한 PowerPoint/Keynote master 원본과 정확한 좌표·폰트 크기 값은 별도 확인이 필요합니다.
+- 브랜드 그린은 공식 로고/심볼 에셋과 theme.js 기준 `#00D998`로 확정했으며, primary·green·red 스케일은 KODA Design System(theme.js) 값을 따른다. 하이라이터 마커(`#9FEAD0`)는 아직 템플릿 렌더 근사값으로 공식 값 확인이 필요하다.
+- wordmark의 공식 clear space, 최소 크기, 승인된 반전 버전 규정은 공개 자료로 확인되지 않았습니다.
+- 브랜드 기하 도형(슬래시·원)의 원본 벡터 파일과 배치 규칙은 템플릿 관찰 기반이며 공식 에셋 확인이 필요합니다.
+- chart·table 토큰은 템플릿에서 관찰한 값과 KODA 팔레트를 발표 환경에 맞게 확장한 운영 규칙입니다.
+- Pretendard를 PPTX에 포함할 수 있는 라이선스·배포 정책은 전달 환경별 확인이 필요합니다.
+- 영문 발표자료의 제목 길이, 줄바꿈, fallback 폰트 렌더링은 별도 검증이 필요합니다.
+- 인쇄용 CMYK, 고대비 모드, 대형 행사 LED wall용 색 보정은 아직 정의하지 않았습니다.
+- 인증 마크, 파트너 로고, 제품 화면의 최신 버전과 개별 사용 권한은 제작 시점에 확인해야 합니다.
+
+## 18. Source Notes
+
+- **Base document:** `outputs/DESIGN.md — KODA Public Web Design System`
+- **Template source:** `KODA_Slide_Template.pdf · [KODA] 개소식용 소개 자료 v1.1 (공식 발표 템플릿)`
+- **Design system:** `figma-claude-connect/theme.js · theme.css — KODA Design System 토큰`
+- **Brand assets:** `slide_assets/Logo.svg · symbol.svg — 공식 워드마크·심볼(브랜드 그린 #00D998)`
+- **Reference:** `https://www.kodax.com/`
+- **Derived on:** `2026-07-16`
+- **Template aligned on:** `2026-07-17`
+- **DS·assets aligned on:** `2026-07-19`
+- **Directly inherited:** 브랜드 색상, Pretendard/Inter, 넓은 흰 캔버스, 증거 중심 구성, hairline 사용, 제한된 녹색 강조
+- **From slide template:** 밝은 KODA 그린 중심 팔레트, 로고 파생 기하 도형(슬래시·원), 민트 하이라이터 바, kicker + 제목 + 우상단 로고 구조, 목차·Disclaimer·연락처 마감 레이아웃, 절제된 카드, 민트 표 헤더, 범주형 차트 예외
+- **Presentation adaptations:** 16:9 format, pt 기반 type scale, 12-column grid, master layouts, chart/table rules, slide motion, copy limits, delivery QA
+- **Ownership:** 공개 정보로 미확인; KODA 브랜드 또는 커뮤니케이션 책임자의 검토·승인이 필요함
+
+## 19. Stroke · Fill · Layout 세부 규칙 (v1.1 정렬)
+
+공식 KODA Slide Template, 개소식 소개 자료, KODA Design System(theme.js), 공식 로고/심볼 에셋에 맞춰 실제 제작에서 확정한 세부 규칙이다. 앞 절의 원칙과 충돌하면 이 절을 우선한다.
+
+### Brand Green · 스트로크 색
+
+- 밝은 브랜드 그린 `#00D998`(brand-highlight)은 **면·글리프**(아이콘, 막대, 하이라이터, fill, 도형)에만 쓴다.
+- 초록색 **스트로크(테두리·구분선)** 가 필요하면 `green-sub #55C9A4`를 쓴다. 밝은 브랜드 그린은 스트로크에 쓰지 않는다.
+- 텍스트 위 진한 그린 강조가 필요하면 `primary/500 #02794E`를 쓴다.
+- 위험·부정(슬래싱, 수수료 차감 등)은 DS red(`#F5405B` / soft `#FFEDF0`)를 라벨과 함께 쓴다.
+
+### Stroke 두께
+
+- 기본 스트로크는 **2px 미만**(약 1~1.5px)으로 한다. 2px 이상 굵은 스트로크는 쓰지 않는다.
+- **예외:** 강조 문구(callout)의 좌측 강조 바만 `3px`, 색은 `green-sub`.
+- 콘텐츠·표에서 굵은 스트로크 대신 **fill 또는 얇은 스트로크**를 우선한다.
+- 표 헤더 하단선은 진한 강조선 대신 본문 행(td)과 같은 `hairline` 색을 쓴다.
+- Grid 콘텐츠(FAQ 등) 항목 상단 구분 stroke, 소제목 위 구분선(col-title 상단선)은 두지 않고 색·굵기 위계로 구분한다.
+- 표지 CONFIDENTIAL 등 장식용 굵은 구분선은 쓰지 않는다.
+
+### Fill 박스
+
+- 면(fill) 박스(4-그리드 지표, 프로세스 단계 등)는 **테두리 없이 fill만** 쓰고, 박스 안 콘텐츠는 **중앙 정렬**한다.
+- 부모가 테두리(stroke) 박스이면 그 안 콘텐츠는 다시 박스를 두지 않는다. 특히 아이콘은 박스·배경 없이 아이콘만 크게 노출한다.
+- 한 슬라이드에서 같은 fill(민트 등)이 과하게 반복되면 일부 요소를 **얇은 stroke 박스**로 바꿔 색면 반복을 줄인다.
+- 보조 박스는 좌측에 몰지 말고 **전체 폭 비율**로 배치한다.
+
+### 전면 그린 배경
+
+- 전면 그린(brand-highlight) 배경 fill은 **섹션 시작 전 구분(타이틀) 페이지에만** 사용한다. 마감·콘텐츠 페이지에는 쓰지 않는다.
+- 구분 페이지: 전면 그린 + 검정 `번호 + 섹션명`(세로 중앙·좌측 정렬) + 우상단 로고, 페이지 번호 생략.
+
+### 로고 · 심볼 · 아이콘
+
+- 워드마크·심볼(슬래시·원)은 **공식 에셋 파일을 그대로** 사용하고 새로 그리지 않는다. 표지 우측 브랜드 도형도 공식 심볼 에셋을 사용한다.
+- 로고는 **표지만 좌상단**, 그 외 모든 슬라이드는 우상단.
+- 아이콘은 **Remix Icon** 스타일(단색 선형/채움)을 사용한다.
+
+### 텍스트 · 줄바꿈
+
+- 페이지를 설명하는 핵심 문장(thesis)은 **제목 바로 아래**에 둔다.
+- 한글은 `word-break: keep-all`로 **어절 단위** 줄바꿈한다. 한 줄에 들어가면 줄바꿈하지 않는다.
+- 대표 수치(metric)는 **한 줄**로 표시한다.
+- 영문 eyebrow(예: Consensus Layer)는 `primary` 색상 + **Bold**로 표기한다.
+
+### 레이아웃 정렬
+
+- 헤더(kicker·제목·로고)와 푸터(각주·페이지 번호)를 제외한 **가운데 콘텐츠 영역은 세로 중앙 정렬**한다.
+
+### Process Flow
+
+- 프로세스 단계는 **채운 민트 박스(테두리 없음) + 박스 안 라벨 중앙 정렬 + 설명은 박스 아래 + 셰브론 화살표**로 표현한다.
+- 단계 사이 셰브론(›)·화살표도 CSS 도형이 아니라 **Remix Icon**(예: `arrow-right-s-line`)을 쓴다. 화살표·셰브론을 포함한 모든 아이콘 글리프는 Remix Icon으로 통일한다.
+- 강조 단계는 진한 민트(`brand-highlight-marker`)로 구분한다.
