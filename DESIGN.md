@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: "koda-presentation-design-system"
+name: "koda-slide"
 description: >-
   KODA 발표자료는 기관 금융의 신뢰감과 디지털 자산 기술의 정밀함을 넓은 흰 캔버스,
   굵은 Pretendard 제목, 밝은 KODA 그린을 중심으로 한 제한된 팔레트, 로고에서 파생한

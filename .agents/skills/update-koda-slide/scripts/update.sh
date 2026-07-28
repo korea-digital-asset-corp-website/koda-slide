@@ -2,8 +2,8 @@
 
 set -u
 
-expected_remote_https="https://github.com/korea-digital-asset-corp-website/presentation-design.git"
-expected_remote_ssh="git@github.com:korea-digital-asset-corp-website/presentation-design.git"
+expected_remote_https="https://github.com/korea-digital-asset-corp-website/koda-slide.git"
+expected_remote_ssh="git@github.com:korea-digital-asset-corp-website/koda-slide.git"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 skill_dir="$(cd "${script_dir}/.." && pwd)"
 check_only="false"
@@ -34,7 +34,7 @@ fi
 
 remote_url="$(git -C "${repo_root}" remote get-url origin 2>/dev/null || true)"
 if [[ "${remote_url}" != "${expected_remote_https}" && "${remote_url}" != "${expected_remote_ssh}" ]]; then
-  echo "WRONG_REMOTE: origin이 공식 KODA presentation-design 저장소를 가리키지 않습니다."
+  echo "WRONG_REMOTE: origin이 공식 KODA Slide 저장소를 가리키지 않습니다."
   exit 6
 fi
 

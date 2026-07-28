@@ -1,4 +1,4 @@
-# KODA Presentation Design System
+# KODA Slide
 
 KODA 구성원이 AI와 함께 발표자료를 만들 때 일관된 KODA 브랜딩을 적용할 수 있도록 정리한 발표자료용 디자인 시스템입니다.
 
@@ -8,20 +8,20 @@ KODA 구성원이 AI와 함께 발표자료를 만들 때 일관된 KODA 브랜�
 
 Git이나 개발 도구를 몰라도 괜찮습니다. 로컬 파일을 다룰 수 있는 ChatGPT·Codex·Claude 등의 AI에게 아래 문장을 그대로 보내세요.
 
-> `https://github.com/korea-digital-asset-corp-website/presentation-design.git`을 제 작업 폴더에 내려받아 주세요. Git으로 복제하고, 완료되면 저장된 위치를 알려주세요.
+> `https://github.com/korea-digital-asset-corp-website/koda-slide.git`을 제 작업 폴더에 내려받아 주세요. Git으로 복제하고, 완료되면 저장된 위치를 알려주세요.
 
-AI가 알려준 `presentation-design` 폴더의 위치를 기억해 두면 됩니다. 이미 GitHub에서 ZIP 파일을 내려받았다면 압축을 푼 폴더를 사용할 수도 있지만, ZIP 방식은 아래의 자동 업데이트 기능을 이용할 수 없습니다.
+AI가 알려준 `koda-slide` 폴더의 위치를 기억해 두면 됩니다. 이미 GitHub에서 ZIP 파일을 내려받았다면 압축을 푼 폴더를 사용할 수도 있지만, ZIP 방식은 아래의 자동 업데이트 기능을 이용할 수 없습니다.
 
 ## 발표자료 만들기
 
 AI와 작업 중인 프로젝트에서 다음 중 편한 방법을 사용하세요.
 
-- AI에게 `presentation-design` 폴더의 위치를 알려주기
-- 대화나 프로젝트에 `presentation-design` 폴더를 직접 첨부하기
+- AI에게 `koda-slide` 폴더의 위치를 알려주기
+- 대화나 프로젝트에 `koda-slide` 폴더를 직접 첨부하기
 
 그다음 아래 예시처럼 요청하면 됩니다.
 
-> 첨부한 기획안을 바탕으로 발표자료를 만들어 주세요. KODA 발표 디자인 시스템은 `/내가/저장한/위치/presentation-design`에 있습니다. `DESIGN.md`와 `slide_assets`를 참고해 KODA 브랜딩을 일관되게 적용해 주세요.
+> 첨부한 기획안을 바탕으로 발표자료를 만들어 주세요. KODA 발표 디자인 시스템은 `/내가/저장한/위치/koda-slide`에 있습니다. `DESIGN.md`와 `slide_assets`를 참고해 KODA 브랜딩을 일관되게 적용해 주세요.
 
 원하는 결과물에 따라 마지막 문장을 덧붙이세요.
 
@@ -44,11 +44,11 @@ ChatGPT·Codex·Claude처럼 앱 안에서 브라우저를 지원하는 도구�
 
 ## 최신 버전으로 업데이트하기
 
-Git 명령을 직접 입력할 필요가 없습니다. `presentation-design` 폴더를 AI에서 열거나 그 위치를 알려준 뒤 아래 문장만 보내세요.
+Git 명령을 직접 입력할 필요가 없습니다. `koda-slide` 폴더를 AI에서 열거나 그 위치를 알려준 뒤 아래 문장만 보내세요.
 
 > KODA 발표자료 디자인 시스템을 최신 버전으로 업데이트해 주세요.
 
-프로젝트에 포함된 `update-koda-presentation-design` Skill이 현재 작업물을 먼저 확인한 다음 공식 저장소의 최신 `main` 버전을 `git pull`로 받아옵니다.
+프로젝트에 포함된 `update-koda-slide` Skill이 현재 작업물을 먼저 확인한 다음 공식 저장소의 최신 `main` 버전을 `git pull`로 받아옵니다.
 
 - 변경된 파일이 없으면 기존 작업 이력을 바꾸지 않는 안전한 방식으로 업데이트합니다.
 - 이미 최신 버전이면 그대로 알려줍니다.
@@ -59,11 +59,14 @@ ZIP으로 받은 폴더는 Git 저장소가 아니므로 이 기능을 사용할
 ## 폴더 안내
 
 ```text
-presentation-design/
+koda-slide/
 ├── DESIGN.md        # KODA 발표자료 디자인 규칙
 ├── slide_assets/    # KODA 로고와 심볼
 ├── docs/media/      # AI 앱 활용 예시 영상
-└── .agents/skills/  # AI가 사용하는 안전한 업데이트 Skill
+├── AGENTS.md        # Codex·Claude 공통 프로젝트 지침
+├── CLAUDE.md        # AGENTS.md를 가리키는 Claude용 링크
+├── .agents/skills/  # 프로젝트 Skill 원본
+└── .claude/skills/  # .agents/skills를 가리키는 Claude용 링크
 ```
 
 ## AI에게 함께 전달하면 좋은 정보
