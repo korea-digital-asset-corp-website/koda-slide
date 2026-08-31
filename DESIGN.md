@@ -303,16 +303,19 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 
 ## 3. Colors
 
+YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용합니다. 아래 표와 본문의
+색상 표기는 토큰의 용도와 적용 맥락을 설명하며, 값이 다를 경우 frontmatter 토큰을 우선합니다.
+
 ### Core Palette
 
 | Token | Value | Presentation role | Maximum use |
 |---|---:|---|---|
-| `{colors.brand-highlight}` | `#00C68C` | KODA 시그니처 그린: 섹션 전면, 기하 도형, 아이콘, 막대, 결론 강조 | 대표 브랜드 색; 전면 또는 강조 요소 |
-| `{colors.brand-highlight-dark}` | `#00A574` | brand-highlight의 어두운 단계, 도형·데이터 구분 | 보조 계열 |
+| `{colors.brand-highlight}` | `#00D998` | KODA 시그니처 그린: 섹션 전면, 기하 도형, 아이콘, 막대, 결론 강조 | 대표 브랜드 색; 전면 또는 강조 요소 |
+| `{colors.brand-highlight-dark}` | `#00B27E` | brand-highlight의 어두운 단계, 도형·데이터 구분 | 보조 계열 |
 | `{colors.brand-highlight-marker}` | `#9FEAD0` | 핵심 어구 뒤 하이라이터 바 | 한 슬라이드 1~2개 어구 |
 | `{colors.brand-highlight-soft}` | `#E6FBF5` | 카드 면, 아이콘 타일, 표 헤더·핵심 행 배경 | 슬라이드 면적의 35% 이내 |
-| `{colors.primary}` | `#006D4C` | 흰 배경에서 대비가 더 필요한 작은 텍스트·선의 보조 강조 | 선택적, 소량 |
-| `{colors.primary-dark}` | `#00573D` | primary의 어두운 단계 | 데이터 구분 |
+| `{colors.primary}` | `#02794E` | 흰 배경에서 대비가 더 필요한 작은 텍스트·선의 보조 강조 | 선택적, 소량 |
+| `{colors.primary-dark}` | `#025537` | primary의 어두운 단계 | 데이터 구분 |
 | `{colors.action-dark}` | `#00160F` | 강한 제목, 차트 레이블 | 검정 대신 녹색 기운이 필요한 경우 |
 | `{colors.canvas}` | `#FFFFFF` | 기본 슬라이드 배경 | 전체 덱의 70% 이상 |
 | `{colors.canvas-muted}` | `#F1F3F2` | Disclaimer·부록 등 차분한 배경 | 소수 슬라이드 |
@@ -331,9 +334,9 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 ### Color Rules
 
 - 기본 슬라이드는 white canvas와 black text 조합을 사용합니다.
-- 민트(`#00C68C`) 전체 면에서는 검정 텍스트와 검정 로고를 사용합니다. 이 조합의 대비는 `9.46:1`입니다.
+- 밝은 KODA 그린(`{colors.brand-highlight}`) 전체 면에서는 검정 텍스트와 검정 로고를 사용합니다. `#000000` on `#00D998`의 대비는 `11.38:1`입니다.
 - 하이라이터 바(`#9FEAD0`)는 검정 텍스트 뒤에만 깔고, 한 슬라이드에서 1~2개 어구로 제한합니다.
-- 짙은 녹색 면 위 텍스트는 흰색을 사용합니다. `#FFFFFF` on `#006D4C`는 `6.38:1`입니다.
+- 짙은 녹색(`{colors.primary}`) 면 위 텍스트는 흰색을 사용합니다. `#FFFFFF` on `#02794E`의 대비는 `5.46:1`입니다.
 - `#99A29F`는 흰 배경에서 `2.62:1`이므로 본문·출처에 사용하지 않습니다.
 - 단일 지표·추세 차트는 KODA 그린 계열을 포함해 최대 4개 데이터 색만 사용합니다.
 - 시장점유율·경쟁사 비교처럼 개체를 구분해야 하는 차트는 각 기관의 식별색을 쓰는 범주형 팔레트를 예외로 허용합니다(§8 참조).
@@ -540,8 +543,8 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 
 ### Color Sequence (단일 지표·추세)
 
-1. Primary series: `#00C68C` (KODA 그린)
-2. Emphasis or comparison: `#006D4C`
+1. Primary series: `{colors.brand-highlight}` (KODA 그린)
+2. Emphasis or comparison: `{colors.primary}`
 3. Comparison: `#33453F`
 4. Secondary comparison: `#808B87`
 5. Context or remainder: `#B3B9B7`
@@ -558,7 +561,7 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 - Grid: `0.75pt #E8EAE9`
 - Axis: `1pt #B3B9B7`
 - Data label: `12pt #33453F`
-- Bars: `#00C68C` 단색, square ends 또는 최대 `2pt` radius
+- Bars: `{colors.brand-highlight}` 단색, square ends 또는 최대 `2pt` radius
 - Primary line: `2.5pt`, comparison line: `1.5pt`
 - Source: 차트 아래 `10pt #66736F`
 - 차트 위 핵심 값·라벨에는 하이라이터 바를 사용할 수 있습니다.
@@ -717,7 +720,7 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 이 DESIGN.md를 KODA 발표자료의 단일 디자인 기준으로 사용하세요.
 16:9 슬라이드와 12-column grid를 사용하고, 한 슬라이드에 하나의 결론과 하나의 증거군만
 배치하세요. 제목은 결론형 문장으로 작성하고 모든 수치에 기준 시점과 출처를 붙이세요.
-흰 캔버스, Pretendard 700 제목, 밝은 KODA 그린(#00C68C) 도형·아이콘·막대·섹션 면,
+흰 캔버스, Pretendard 700 제목, 밝은 KODA 그린(#00D998) 도형·아이콘·막대·섹션 면,
 핵심 어구의 민트 하이라이터 바(#9FEAD0), 넓은 여백을 유지하세요. 콘텐츠 슬라이드는
 좌상단 회색 kicker + 제목 + 우상단 로고 구조를 따르고, 표지에서만 로고를 좌상단에 두세요.
 카드는 얇은 테두리 또는 연한 민트 면으로 절제해 쓰고, 그라디언트·glow·pill·3D chart·
