@@ -16,9 +16,9 @@ colors:
   brand-highlight-soft: "#E6FBF5"   # 카드·아이콘 타일·표 헤더·강조 면
 
   # KODA Design System (theme.js) — primary scale
-  primary-pale: "#DEFFE5"
-  primary-light: "#AEF5CA"
-  primary-sub: "#50BF83"
+  primary-pale: "#DEFFE5"            # 예약 토큰 · 기본 슬라이드 역할 없음
+  primary-light: "#AEF5CA"           # 예약 토큰 · 기본 슬라이드 역할 없음
+  primary-sub: "#50BF83"             # 예약 토큰 · 기본 슬라이드 역할 없음
   primary: "#02794E"                # primary/500 (primary-main) · 텍스트 위 진한 그린 강조
   primary-dark: "#025537"
 
@@ -27,10 +27,9 @@ colors:
 
   # DS red scale — 부정·위험 전용(라벨 병행)
   danger: "#F5405B"                 # red-main
-  danger-dark: "#E51244"
+  danger-dark: "#E51244"            # 예약 토큰 · 기본 슬라이드 역할 없음
   danger-soft: "#FFEDF0"            # red-pale
 
-  action-dark: "#00160F"
   canvas: "#FFFFFF"
   canvas-muted: "#F1F3F2"
   surface-inverse: "#000000"
@@ -190,6 +189,39 @@ components:
   contact-row:
     typography: "{typography.body}"
     textColor: "{colors.ink}"
+  chart-series-brand-dark:
+    backgroundColor: "{colors.brand-highlight-dark}"
+  chart-series-primary-dark:
+    backgroundColor: "{colors.primary-dark}"
+  chart-series-neutral-1:
+    backgroundColor: "{colors.data-neutral-1}"
+  chart-series-neutral-2:
+    backgroundColor: "{colors.data-neutral-2}"
+  chart-series-neutral-3:
+    backgroundColor: "{colors.data-neutral-3}"
+  divider:
+    backgroundColor: "{colors.hairline}"
+    height: "1px"
+  chart-axis:
+    backgroundColor: "{colors.hairline-strong}"
+    height: "1.333px"
+  callout-accent-bar:
+    backgroundColor: "{colors.green-sub}"
+    width: "4px"
+  danger-accent:
+    backgroundColor: "{colors.danger}"
+    width: "4px"
+  danger-surface:
+    backgroundColor: "{colors.danger-soft}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "24px"
+  disclaimer-surface:
+    backgroundColor: "{colors.canvas-muted}"
+    textColor: "{colors.ink}"
+  inverse-surface:
+    backgroundColor: "{colors.surface-inverse}"
+    textColor: "{colors.ink-inverse}"
 ---
 
 # Presentation Design System: KODA
@@ -282,7 +314,6 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 | `{colors.brand-highlight-soft}` | `#E6FBF5` | 카드 면, 아이콘 타일, 표 헤더·핵심 행 배경 | 슬라이드 면적의 35% 이내 |
 | `{colors.primary}` | `#02794E` | 흰 배경에서 대비가 더 필요한 작은 텍스트·선의 보조 강조 | 선택적, 소량 |
 | `{colors.primary-dark}` | `#025537` | primary의 어두운 단계 | 데이터 구분 |
-| `{colors.action-dark}` | `#00160F` | 강한 제목, 차트 레이블 | 검정 대신 녹색 기운이 필요한 경우 |
 | `{colors.canvas}` | `#FFFFFF` | 기본 슬라이드 배경 | 전체 덱의 70% 이상 |
 | `{colors.canvas-muted}` | `#F1F3F2` | Disclaimer·부록 등 차분한 배경 | 소수 슬라이드 |
 | `{colors.surface-inverse}` | `#000000` | 승인된 반전 마감·부록 | 전체 덱에서 1~2장 이내 |
@@ -292,6 +323,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 | Token | Value | Use |
 |---|---:|---|
 | `{colors.ink}` | `#000000` | 제목·본문 |
+| `{colors.ink-strong}` | `#00160F` | 강한 제목·차트 레이블 등 녹색 기운이 있는 진한 텍스트 |
 | `{colors.ink-muted}` | `#66736F` | 보조 설명·출처 |
 | `{colors.ink-subtle}` | `#99A29F` | 장식·비활성 요소 전용 |
 | `{colors.hairline}` | `#E8EAE9` | 표·목록·차트 grid |
@@ -304,6 +336,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 하이라이터 바(`#9FEAD0`)는 검정 텍스트 뒤에만 깔고, 한 슬라이드에서 1~2개 어구로 제한합니다.
 - 짙은 녹색(`{colors.primary}`) 면 위 텍스트는 흰색을 사용합니다. `#FFFFFF` on `#02794E`의 대비는 `5.46:1`입니다.
 - `#99A29F`는 흰 배경에서 `2.62:1`이므로 본문·출처에 사용하지 않습니다.
+- `primary-pale`·`primary-light`·`primary-sub`·`danger-dark`는 KODA Design System과의 호환성을 위해 보존하는 예약 토큰입니다. 기본 슬라이드에는 사용하지 않으며, 새 역할을 정의할 때는 사용 맥락과 대비를 함께 검증합니다.
 - 단일 지표·추세 차트는 KODA 그린 계열을 포함해 최대 4개 데이터 색만 사용합니다.
 - 시장점유율·경쟁사 비교처럼 개체를 구분해야 하는 차트는 각 기관의 식별색을 쓰는 범주형 팔레트를 예외로 허용합니다(§8 참조).
 - 상태를 색만으로 구분하지 않고 직접 레이블, 선 모양, 데이터 값 중 하나를 함께 사용합니다.
@@ -415,6 +448,12 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - `callout-box`: 흰 배경, `1pt {colors.green-sub}` 테두리, `{rounded.card}`, `18~24pt` 내부 여백을 사용합니다.
 - `icon-tile`: `40~56pt` 정사각형 안에 `{colors.brand-highlight}` 단색 아이콘을 중앙 정렬합니다.
 - `highlight-marker`: 텍스트 하단 baseline 근처에 놓고 한 슬라이드에서 최대 2개 어구에만 사용합니다.
+- `chart-series-*`: 차트 계열의 색상 역할만 나타내며 실제 선 두께·순서는 §8을 따릅니다.
+- `divider`와 `chart-axis`: 각각 `0.75pt {colors.hairline}`, `1pt {colors.hairline-strong}`를 사용합니다.
+- `callout-accent-bar`: callout 좌측에만 `3px {colors.green-sub}`로 사용합니다.
+- `danger-surface`와 `danger-accent`: 부정·위험 내용을 연한 빨간 면과 빨간 강조선으로 표시하고 텍스트 레이블을 함께 둡니다.
+- `disclaimer-surface`: Disclaimer·부록의 차분한 배경에 사용합니다.
+- `inverse-surface`: 승인된 반전 마감·부록에서만 사용하며 전체 덱에서 1~2장을 넘기지 않습니다.
 - 차트·표·브랜드 도형의 선, 계열색, 배치 규칙은 각각 §8~10과 §19를 따릅니다.
 
 ### A. Cover
