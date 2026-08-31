@@ -77,6 +77,7 @@ typography:
     fontWeight: 700
     lineHeight: 1.0
     letterSpacing: "-0.667px"
+    fontFeature: '"tnum" 1'
   body:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
     fontSize: "24px"
@@ -101,6 +102,14 @@ typography:
     fontWeight: 500
     lineHeight: 1.3
     letterSpacing: "0px"
+    fontFeature: '"tnum" 1'
+  data-number:
+    fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
+    fontSize: "18.667px"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "0px"
+    fontFeature: '"tnum" 1'
   caption:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
     fontSize: "13.333px"
@@ -162,6 +171,12 @@ components:
     backgroundColor: "{colors.brand-highlight-soft}"
     textColor: "{colors.ink}"
     typography: "{typography.body}"
+  table-number:
+    typography: "{typography.data-number}"
+    textColor: "{colors.ink}"
+  chart-value:
+    typography: "{typography.data-label}"
+    textColor: "{colors.data-neutral-1}"
   highlight-marker:
     backgroundColor: "{colors.brand-highlight-marker}"
     height: "0.55em"
@@ -347,7 +362,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 
 - **Primary:** `Pretendard Variable`
 - **Fallback:** `Pretendard`, `Inter`, `Noto Sans KR`, `Apple SD Gothic Neo`, sans-serif
-- **Numbers:** 동일한 Pretendard를 사용하고 숫자 정렬이 필요한 표에서는 tabular figures 활성화
+- **Numbers:** 동일한 Pretendard를 사용하고 `{typography.metric}`·`{typography.data-label}`·`{typography.data-number}`에는 tabular figures(`tnum`)를 활성화
 - **Distribution:** PPTX에 폰트를 포함할 수 없는 경우 Pretendard 설치 안내와 PDF를 함께 제공
 
 ### Type Scale
@@ -362,7 +377,8 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 | `{typography.body}` | `18pt` | `400` | `1.35` | 기본 본문 |
 | `{typography.body-strong}` | `18pt` | `600` | `1.35` | 행 제목·강조 본문 |
 | `{typography.body-sm}` | `14pt` | `400` | `1.4` | 보조 본문·표 셀 |
-| `{typography.data-label}` | `12pt` | `500` | `1.3` | 차트 레이블 |
+| `{typography.data-label}` | `12pt` | `500` | `1.3` | 차트 레이블·차트 값 (`tnum`) |
+| `{typography.data-number}` | `14pt` | `400` | `1.4` | 표의 숫자 셀 (`tnum`) |
 | `{typography.caption}` | `10pt` | `400` | `1.35` | 출처·각주·페이지 번호 |
 
 ### Writing & Fitting Rules
@@ -440,6 +456,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - `source-note`: safe area 안 좌하단에 최대 2줄로 둡니다.
 - `page-number`: 필요한 슬라이드의 우하단에 둡니다.
 - `metric-value`와 `metric-label`: 배경·테두리 없이 값과 설명을 세로로 정렬합니다.
+- `table-number`와 `chart-value`: 숫자 폭을 고정하는 tabular figures(`tnum`)를 사용하고 각각 표 숫자 셀과 차트 값에만 적용합니다.
 - `evidence-row`: 투명 배경, `1pt {colors.hairline}` 하단선, `14pt 0` 패딩을 사용합니다.
 - `screenshot-frame`: `1pt {colors.hairline}` 테두리와 `{rounded.media}`를 사용하고 그림자는 넣지 않습니다.
 - `card-white`: 흰 배경에 `1pt {colors.hairline}` 테두리를 사용합니다.
@@ -614,7 +631,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Plot area: transparent
 - Grid: `0.75pt #E8EAE9`
 - Axis: `1pt #B3B9B7`
-- Data label: `12pt #33453F`
+- Data label/value: `{typography.data-label}` + `{colors.data-neutral-1}`; 숫자는 tabular figures(`tnum`) 사용
 - Bars: `{colors.brand-highlight}` 단색, square ends 또는 최대 `2pt` radius
 - Primary line: `2.5pt`, comparison line: `1.5pt`
 - Source: 차트 아래 `10pt #66736F`
@@ -628,6 +645,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Body row는 `0.75pt #E8EAE9` 선으로 구분하고 외곽 상자는 만들지 않습니다.
 - 본문 행 하나를 더 강조해야 하면 같은 `#E6FBF5`를 절제해 사용합니다.
 - 텍스트는 좌측, 수치는 우측, 단위와 기간은 헤더에 표시합니다.
+- 숫자 셀은 `{typography.data-number}`를 사용해 자릿수가 바뀌어도 열 정렬이 유지되게 합니다.
 - 불필요한 소수점과 반복 단위를 제거합니다.
 - 본문 슬라이드는 최대 `6 columns × 8 rows`; 그 이상은 appendix로 이동합니다.
 - 표 셀은 최소 `14pt`, 행 높이는 최소 `28pt`입니다.
@@ -766,6 +784,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Slide title: `{typography.slide-title}`
 - Kicker: `{typography.data-label}` `{colors.ink-subtle}`
 - Body: `{typography.body}`
+- Data number: `{typography.data-number}` (`tnum`)
 - Source: `{typography.caption}`
 - Card radius: `{rounded.card}`
 - Logo: 표지만 좌상단, 그 외 우상단
