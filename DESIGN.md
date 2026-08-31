@@ -8,22 +8,6 @@ description: >-
   강조하고, 한 슬라이드에 하나의 주장과 하나의 증거군만 둔다. 얇은 테두리·연한 민트 면의
   절제된 카드와 수치·차트·제품 화면·인증 자료의 명확한 정렬로 설득력을 만든다.
 
-format:
-  aspectRatio: "16:9"
-  slideWidth: "13.333in / 960pt"
-  slideHeight: "7.5in / 540pt"
-  renderResolution: "1920 × 1080 px (16:9 Full HD) — HTML 화면·PDF 출력 기준 해상도"
-  safeArea:
-    left: "48pt"
-    right: "48pt"
-    top: "32pt"
-    bottom: "32pt"
-  grid:
-    columns: 12
-    gutter: "18pt"
-    contentWidth: "864pt"
-    contentHeight: "476pt"
-
 colors:
   # 브랜드 그린 — 공식 로고/심볼 에셋(Logo.svg / symbol.svg) 및 theme.js 기준
   brand-highlight: "#00D998"        # 밝은 KODA 그린 · 아이콘·막대·하이라이터·fill·도형(면/글리프)
@@ -66,80 +50,80 @@ colors:
 typography:
   cover-title:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "42pt"
+    fontSize: "56px"
     fontWeight: 700
     lineHeight: 1.14
-    letterSpacing: "-0.3pt"
+    letterSpacing: "-0.4px"
   section-title:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "34pt"
+    fontSize: "45.333px"
     fontWeight: 700
     lineHeight: 1.18
-    letterSpacing: "-0.2pt"
+    letterSpacing: "-0.267px"
   slide-title:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "28pt"
+    fontSize: "37.333px"
     fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: "-0.1pt"
+    letterSpacing: "-0.133px"
   statement:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "32pt"
+    fontSize: "42.667px"
     fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: "-0.15pt"
+    letterSpacing: "-0.2px"
   metric:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "56pt"
+    fontSize: "74.667px"
     fontWeight: 700
     lineHeight: 1.0
-    letterSpacing: "-0.5pt"
+    letterSpacing: "-0.667px"
   body:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "18pt"
+    fontSize: "24px"
     fontWeight: 400
     lineHeight: 1.35
-    letterSpacing: "0"
+    letterSpacing: "0px"
   body-strong:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "18pt"
+    fontSize: "24px"
     fontWeight: 600
     lineHeight: 1.35
-    letterSpacing: "0"
+    letterSpacing: "0px"
   body-sm:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "14pt"
+    fontSize: "18.667px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0"
+    letterSpacing: "0px"
   data-label:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "12pt"
+    fontSize: "16px"
     fontWeight: 500
     lineHeight: 1.3
-    letterSpacing: "0"
+    letterSpacing: "0px"
   caption:
     fontFamily: '"Pretendard Variable", Pretendard, Inter, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif'
-    fontSize: "10pt"
+    fontSize: "13.333px"
     fontWeight: 400
     lineHeight: 1.35
-    letterSpacing: "0"
+    letterSpacing: "0px"
 
 rounded:
-  none: "0"
-  control: "3pt"
-  media: "6pt"
-  card: "8pt"
+  none: "0px"
+  control: "4px"
+  media: "8px"
+  card: "10.667px"
 
 spacing:
-  unit: "4pt"
-  xxs: "4pt"
-  xs: "8pt"
-  sm: "12pt"
-  md: "18pt"
-  lg: "24pt"
-  xl: "32pt"
-  xxl: "48pt"
+  unit: "5.333px"
+  xxs: "5.333px"
+  xs: "10.667px"
+  sm: "16px"
+  md: "24px"
+  lg: "32px"
+  xl: "42.667px"
+  xxl: "64px"
 
 components:
   deck-wordmark:
@@ -279,6 +263,11 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 - 3D 차트, 네온 크립토 그래픽, glow·gradient 도형을 사용하지 않음
 
 ## 2. Slide Format & Grid
+
+YAML frontmatter의 `typography`·`spacing`·`rounded` 토큰은 DESIGN.md 도구와 HTML/CSS에서
+검증·내보내기할 수 있도록 `px`로 기록합니다. 값은 CSS 기준 `1pt = 4/3px`로 환산하며,
+PowerPoint·Keynote·Google Slides 제작에서는 아래 본문과 표에 적힌 `pt` 값을 사용합니다.
+두 표기는 같은 크기의 단위 표현이므로 어느 한쪽을 바꿀 때 반드시 함께 갱신합니다.
 
 ### Canvas
 
