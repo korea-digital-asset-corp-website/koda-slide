@@ -251,7 +251,7 @@ components:
 읽히는 크기와 정보 밀도로 변환합니다. 웹에서 직접 관찰한 브랜드 토큰과 발표자료를 위한
 새로운 운영 규칙을 구분해 기록합니다.
 
-## 1. Brand Translation
+## Overview
 
 KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”이 아니라, 법인·기관 청중이
 주장과 근거를 빠르게 이해하고 신뢰하게 만드는 것입니다. 슬라이드마다 시선을 끄는 장치보다
@@ -278,45 +278,7 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 - 차트·표·스크린샷을 장식이 아닌 검증 자료로 사용
 - 3D 차트, 네온 크립토 그래픽, glow·gradient 도형을 사용하지 않음
 
-## 2. Slide Format & Grid
-
-YAML frontmatter의 `typography`·`spacing`·`rounded` 토큰은 DESIGN.md 도구와 HTML/CSS에서
-검증·내보내기할 수 있도록 `px`로 기록합니다. 값은 CSS 기준 `1pt = 4/3px`로 환산하며,
-PowerPoint·Keynote·Google Slides 제작에서는 아래 본문과 표에 적힌 `pt` 값을 사용합니다.
-두 표기는 같은 크기의 단위 표현이므로 어느 한쪽을 바꿀 때 반드시 함께 갱신합니다.
-
-### Canvas
-
-- **Aspect ratio:** `16:9`
-- **Slide size:** `13.333 × 7.5in` 또는 `960 × 540pt`
-- **Safe area:** 좌우 `48pt`, 상하 `32pt`
-- **Content area:** `864 × 476pt`
-- **Grid:** `12 columns`, `18pt` gutter
-- **Alignment:** 제목, 본문, 차트, 출처는 반드시 동일한 12-column 축 중 하나에 맞춤
-
-### Primary Zones
-
-| Zone | Position | Rule |
-|---|---|---|
-| Brand | 상단 32pt 안쪽 | 표지만 좌측, 그 외 모든 슬라이드는 우측 상단 wordmark |
-| Kicker | 상단 좌측, 제목 위 | 12~14pt 회색 eyebrow 라벨로 슬라이드가 속한 주제를 표시 (콘텐츠·데이터 슬라이드) |
-| Title | 상단 56~104pt | 최대 2줄, 본문보다 최소 20pt 위계 차이 |
-| Content | 120~482pt | 텍스트·데이터·미디어의 핵심 영역 |
-| Source | 하단 496~520pt | 10pt, 최대 2줄, 좌측 정렬 |
-| Folio | 우하단 | 10pt 페이지 번호; 공식 템플릿 마스터에는 미포함이며 필요 시에만 추가 |
-
-### Layout Rules
-
-- 기본 분할은 `7:5`, `6:6`, `4:8` 중 하나만 사용합니다.
-- 한 슬라이드에 3개를 초과하는 독립 열을 만들지 않습니다.
-- 콘텐츠 블록 사이 최소 간격은 `24pt`, 제목과 본문 사이는 `18~24pt`입니다.
-- 페이지를 설명하는 핵심 문장(thesis)은 제목 바로 아래에 둡니다.
-- 헤더(kicker·제목·로고)와 푸터(출처·페이지 번호)를 제외한 가운데 콘텐츠 영역은 세로 중앙에 맞춥니다.
-- 텍스트가 넘치면 자동 축소하지 말고 문장을 편집하거나 슬라이드를 나눕니다.
-- 본문을 `14pt` 미만으로 줄이지 않습니다. 출처·각주만 `10pt`까지 허용합니다.
-- 슬라이드 가장자리로 이미지를 흘릴 때도 로고·텍스트는 safe area 안에 유지합니다.
-
-## 3. Colors
+## Colors
 
 YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용합니다. 아래 표와 본문의
 색상 표기는 토큰의 용도와 적용 맥락을 설명하며, 값이 다를 경우 frontmatter 토큰을 우선합니다.
@@ -358,10 +320,10 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - `#99A29F`는 흰 배경에서 `2.62:1`이므로 본문·출처에 사용하지 않습니다.
 - `primary-pale`·`primary-light`·`primary-sub`·`danger-dark`는 KODA Design System과의 호환성을 위해 보존하는 예약 토큰입니다. 기본 슬라이드에는 사용하지 않으며, 새 역할을 정의할 때는 사용 맥락과 대비를 함께 검증합니다.
 - 단일 지표·추세 차트는 KODA 그린 계열을 포함해 최대 4개 데이터 색만 사용합니다.
-- 시장점유율·경쟁사 비교처럼 개체를 구분해야 하는 차트는 각 기관의 식별색을 쓰는 범주형 팔레트를 예외로 허용합니다(§8 참조).
+- 시장점유율·경쟁사 비교처럼 개체를 구분해야 하는 차트는 각 기관의 식별색을 쓰는 범주형 팔레트를 예외로 허용합니다(`Data Visualization` 참조).
 - 상태를 색만으로 구분하지 않고 직접 레이블, 선 모양, 데이터 값 중 하나를 함께 사용합니다.
 
-## 4. Typography
+## Typography
 
 ### Font Stack
 
@@ -398,7 +360,51 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 제목은 “현황”, “시장” 같은 명사보다 `KODA는 시장의 86.6%를 수탁합니다`처럼 결론형 문장을 우선합니다.
 - 수치와 단위는 분리하지 않습니다. `1.5조 원`, `86.6%`, `$20M`처럼 한 덩어리로 유지합니다.
 
-## 5. Logo & Brand Assets
+## Layout
+
+YAML frontmatter의 `typography`·`spacing`·`rounded` 토큰은 DESIGN.md 도구와 HTML/CSS에서
+검증·내보내기할 수 있도록 `px`로 기록합니다. 값은 CSS 기준 `1pt = 4/3px`로 환산하며,
+PowerPoint·Keynote·Google Slides 제작에서는 아래 본문과 표에 적힌 `pt` 값을 사용합니다.
+두 표기는 같은 크기의 단위 표현이므로 어느 한쪽을 바꿀 때 반드시 함께 갱신합니다.
+
+### Canvas
+
+- **Aspect ratio:** `16:9`
+- **Slide size:** `13.333 × 7.5in` 또는 `960 × 540pt`
+- **Safe area:** 좌우 `48pt`, 상하 `32pt`
+- **Content area:** `864 × 476pt`
+- **Grid:** `12 columns`, `18pt` gutter
+- **Alignment:** 제목, 본문, 차트, 출처는 반드시 동일한 12-column 축 중 하나에 맞춤
+
+### Primary Zones
+
+| Zone | Position | Rule |
+|---|---|---|
+| Brand | 상단 32pt 안쪽 | 표지만 좌측, 그 외 모든 슬라이드는 우측 상단 wordmark |
+| Kicker | 상단 좌측, 제목 위 | 12~14pt 회색 eyebrow 라벨로 슬라이드가 속한 주제를 표시 (콘텐츠·데이터 슬라이드) |
+| Title | 상단 56~104pt | 최대 2줄, 본문보다 최소 20pt 위계 차이 |
+| Content | 120~482pt | 텍스트·데이터·미디어의 핵심 영역 |
+| Source | 하단 496~520pt | 10pt, 최대 2줄, 좌측 정렬 |
+| Folio | 우하단 | 10pt 페이지 번호; 공식 템플릿 마스터에는 미포함이며 필요 시에만 추가 |
+
+### Layout Rules
+
+- 기본 분할은 `7:5`, `6:6`, `4:8` 중 하나만 사용합니다.
+- 한 슬라이드에 3개를 초과하는 독립 열을 만들지 않습니다.
+- 콘텐츠 블록 사이 최소 간격은 `24pt`, 제목과 본문 사이는 `18~24pt`입니다.
+- 페이지를 설명하는 핵심 문장(thesis)은 제목 바로 아래에 둡니다.
+- 헤더(kicker·제목·로고)와 푸터(출처·페이지 번호)를 제외한 가운데 콘텐츠 영역은 세로 중앙에 맞춥니다.
+- 텍스트가 넘치면 자동 축소하지 말고 문장을 편집하거나 슬라이드를 나눕니다.
+- 본문을 `14pt` 미만으로 줄이지 않습니다. 출처·각주만 `10pt`까지 허용합니다.
+- 슬라이드 가장자리로 이미지를 흘릴 때도 로고·텍스트는 safe area 안에 유지합니다.
+
+## Elevation & Depth
+
+- KODA 슬라이드는 그림자나 입체감 대신 흰 캔버스, 연한 민트 면, hairline과 여백으로 정보 위계를 만듭니다.
+- 카드·스크린샷·도형에는 drop shadow, glow, glassmorphism, gradient를 사용하지 않습니다.
+- 전면 그린은 섹션 구분에만 사용하고, 일반 콘텐츠의 깊이는 면 색과 얇은 선의 대비로 표현합니다.
+
+## Shapes
 
 ### Wordmark
 
@@ -441,16 +447,18 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 심볼은 안전 여백을 넘어 가장자리로 흘려도 되지만 로고·텍스트와는 겹치지 않습니다.
 - 심볼은 장식이며 정보를 담지 않습니다. 심볼 안에 텍스트나 수치를 넣지 않습니다.
 
-### Product Screenshots & Evidence
+### Icons, Diagrams & Containers
 
-- 제품 화면은 `6pt` radius, `1pt #E8EAE9` border, shadow 없음이 기본입니다.
-- UI를 왜곡하거나 중요한 데이터를 crop하지 않습니다.
-- 한 슬라이드에 전체 화면 스크린샷은 1개, 상세 crop은 최대 2개만 사용합니다.
-- 인증 마크와 파트너 로고는 동일한 시각 높이로 정렬하되 원본 비율을 유지합니다.
-- 파트너 로고는 `slide_assets/partners/` 지정 파일을 쓰고, Logo wall 패턴을 따릅니다.
-- 출처와 기준 시점을 해당 수치·차트·인증 자료와 같은 슬라이드에 둡니다.
+- 아이콘은 Remix Icon의 단순 선형 또는 채운 단색 스타일을 사용합니다.
+- 아이콘 색은 `{colors.brand-highlight}`를 기본으로 하고, 필요 시 black·`{colors.ink-muted}`로 제한합니다.
+- 아이콘 타일은 `{colors.brand-highlight-soft}` 면 위에 녹색 아이콘을 올린 `icon-tile` 형태를 사용합니다.
+- 아이콘만으로 의미를 전달하지 않고 짧은 label을 함께 둡니다.
+- 연결선은 `0.75~1pt`, 기본 `#B3B9B7`, 핵심 흐름만 `{colors.green-sub}`를 사용합니다.
+- 카드·미디어 radius는 `{rounded.card}`(8pt)까지, 작은 컨트롤은 `0~3pt`를 사용합니다.
+- 브랜드 비주얼은 공식 `slide_assets/symbol.svg`를 사용하고 새로 그리지 않습니다.
+- pill, speech bubble, 유리질 glassmorphism, glow, gradient, beveled shape를 사용하지 않습니다.
 
-## 6. Master Layouts
+## Components
 
 ### Shared Component Rules
 
@@ -475,7 +483,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - `callout-box`: 흰 배경, `1pt {colors.green-sub}` 테두리, `{rounded.card}`, `18~24pt` 내부 여백을 사용합니다.
 - `icon-tile`: `40~56pt` 정사각형 안에 `{colors.brand-highlight}` 단색 아이콘을 중앙 정렬합니다.
 - `highlight-marker`: 텍스트 하단 baseline 근처에 놓고 한 슬라이드에서 최대 2개 어구에만 사용합니다.
-- `chart-series-*`: 차트 계열의 색상 역할만 나타내며 실제 선 두께·순서는 §8을 따릅니다.
+- `chart-series-*`: 차트 계열의 색상 역할만 나타내며 실제 선 두께·순서는 `Data Visualization`을 따릅니다.
 - `divider`와 `chart-axis`: 각각 `0.75pt {colors.hairline}`, `1pt {colors.hairline-strong}`를 사용합니다.
 - `callout-accent-bar`: callout 좌측에만 `3px {colors.green-sub}`로 사용합니다.
 - `danger-surface`와 `danger-accent`: 부정·위험 내용을 연한 빨간 면과 `1pt` 빨간 강조선으로 표시하고 텍스트 레이블을 함께 둡니다.
@@ -483,7 +491,16 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - `inverse-surface`: 승인된 반전 마감·부록에서만 사용하며 전체 덱에서 1~2장을 넘기지 않습니다.
 - 기본 테두리·구분선은 `2px` 미만으로 유지하고, `2px` 이상의 선은 `callout-accent-bar`에만 허용합니다.
 - Grid 항목·소제목 위 장식선과 CONFIDENTIAL 옆 굵은 구분선은 두지 않습니다.
-- 차트·표·아이콘·브랜드 심벌의 세부 규칙은 각각 §8~10을 따릅니다.
+- 차트·표·아이콘·브랜드 심벌의 세부 규칙은 각각 `Data Visualization`·`Tables`·`Shapes`를 따릅니다.
+
+### Product Screenshots & Evidence
+
+- 제품 화면은 `6pt` radius, `1pt #E8EAE9` border, shadow 없음이 기본입니다.
+- UI를 왜곡하거나 중요한 데이터를 crop하지 않습니다.
+- 한 슬라이드에 전체 화면 스크린샷은 1개, 상세 crop은 최대 2개만 사용합니다.
+- 인증 마크와 파트너 로고는 동일한 시각 높이로 정렬하되 원본 비율을 유지합니다.
+- 파트너 로고는 `slide_assets/partners/` 지정 파일을 쓰고, Logo wall 패턴을 따릅니다.
+- 출처와 기준 시점을 해당 수치·차트·인증 자료와 같은 슬라이드에 둡니다.
 
 ### A. Cover
 
@@ -568,7 +585,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Body/table: `14pt`, source: `10pt`
 - 본문 슬라이드보다 밀도를 높일 수 있지만 한 슬라이드에 표 1개 원칙 유지
 
-## 7. Slide Patterns
+## Slide Patterns
 
 | Pattern | Composition | Best use |
 |---|---|---|
@@ -615,7 +632,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 단계 사이에는 Remix Icon `arrow-right-s-line` 셰브론을 사용하고 CSS 도형이나 직접 그린 화살표를 사용하지 않습니다.
 - 강조 단계는 `{colors.brand-highlight-marker}` 면으로 구분합니다.
 
-## 8. Data Visualization
+## Data Visualization
 
 ### General Rules
 
@@ -653,7 +670,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 차트 위 핵심 값·라벨에는 하이라이터 바를 사용할 수 있습니다.
 - 데이터 포인트 강조는 크기 확대보다 직접 레이블과 브랜드 그린을 사용
 
-## 9. Tables
+## Tables
 
 - 표 제목은 슬라이드 제목과 중복하지 않고 표가 증명하는 내용을 설명합니다.
 - Header는 `#E6FBF5` 연한 민트 배경, 600 weight, 하단 `0.75pt #E8EAE9` hairline을 사용합니다.
@@ -665,18 +682,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 본문 슬라이드는 최대 `6 columns × 8 rows`; 그 이상은 appendix로 이동합니다.
 - 표 셀은 최소 `14pt`, 행 높이는 최소 `28pt`입니다.
 
-## 10. Icons, Diagrams & Shapes
-
-- 아이콘은 Remix Icon의 단순 선형 또는 채운 단색 스타일을 사용합니다.
-- 아이콘 색은 `{colors.brand-highlight}`를 기본으로 하고, 필요 시 black·`{colors.ink-muted}`로 제한합니다.
-- 아이콘 타일은 `{colors.brand-highlight-soft}` 면 위에 녹색 아이콘을 올린 `icon-tile` 형태를 사용합니다.
-- 아이콘만으로 의미를 전달하지 않고 짧은 label을 함께 둡니다.
-- 연결선은 `0.75~1pt`, 기본 `#B3B9B7`, 핵심 흐름만 `{colors.green-sub}`를 사용합니다.
-- 카드·미디어 radius는 `{rounded.card}`(8pt)까지, 작은 컨트롤은 `0~3pt`를 사용합니다.
-- 브랜드 비주얼은 공식 `slide_assets/symbol.svg`를 사용하고 새로 그리지 않습니다.
-- pill, speech bubble, 유리질 glassmorphism, glow, gradient, beveled shape를 사용하지 않습니다.
-
-## 11. Motion & Builds
+## Motion & Builds
 
 - **Principle:** 등장 효과는 발표자의 설명 순서를 돕고 데이터 관계를 드러낼 때만 사용합니다.
 - **Default transition:** `Fade 0.35s`
@@ -686,7 +692,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - **Avoid:** bounce, fly-in, spin, random bars, sound, 무한 반복 GIF, 긴 video background
 - **Static fallback:** PDF와 reduced-motion 버전에서도 정보가 모두 보이도록 최종 상태를 완결된 레이아웃으로 설계
 
-## 12. Content & Narrative
+## Content & Narrative
 
 ### Story Structure
 
@@ -713,7 +719,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Metric: 숫자 1개 + 설명 2줄 + 출처 2줄
 - Closing: statement 3줄 + contact/next step 2줄
 
-## 13. Accessibility & Delivery
+## Accessibility & Delivery
 
 - 기본 본문은 `18pt`, 보조 본문은 `14pt` 이상을 유지합니다.
 - 출처와 각주도 `10pt` 미만으로 줄이지 않습니다.
@@ -725,7 +731,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 발표 전 1080p 화면, 화상회의 공유, 흑백 PDF에서 각각 가독성을 확인합니다.
 - PPTX와 함께 폰트가 포함된 PDF를 전달합니다.
 
-## 14. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
@@ -749,7 +755,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 로고, 심볼, 인증 마크, 파트너 로고를 왜곡하거나 권한 없이 다시 만들지 않습니다.
 - 파트너 로고를 KODA 그린으로 재색하거나, `slide_assets/partners/` 밖 파일을 임의로 쓰지 않습니다.
 
-## 15. Quality Checklist
+## Quality Checklist
 
 ### Before Design
 
@@ -783,7 +789,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - PPTX, PDF, 발표자 노트의 버전과 날짜가 일치하는가?
 - 애니메이션 없이도 PDF에서 의미가 완결되는가?
 
-## 16. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Reference
 
@@ -824,7 +830,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 유지한 채 Logo wall 카드에 동일 시각 높이로 정렬하세요. KODA 워드마크 자리에는 두지 마세요.
 ```
 
-## 17. Known Gaps
+## Known Gaps
 
 - 공식 KODA Slide Template(PDF)을 기준으로 정렬했으나, 편집 가능한 PowerPoint/Keynote master 원본과 정확한 좌표·폰트 크기 값은 별도 확인이 필요합니다.
 - 브랜드 그린은 공식 로고/심볼 에셋과 theme.js 기준 `#00D998`로 확정했으며, primary·green·red 스케일은 KODA Design System(theme.js) 값을 따른다. 하이라이터 마커(`#9FEAD0`)는 아직 템플릿 렌더 근사값으로 공식 값 확인이 필요하다.
@@ -837,7 +843,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 인증 마크, 파트너 로고, 제품 화면의 최신 버전과 개별 사용 권한은 제작 시점에 확인해야 합니다.
 - `altos-ventures.svg`는 고해상도 PNG를 담은 SVG이고, `ibk-capital.svg`의 워드마크 글자는 래스터입니다. 크게 확대하면 선명도가 떨어질 수 있습니다.
 
-## 18. Source Notes
+## Source Notes
 
 - **Base document:** `outputs/DESIGN.md — KODA Public Web Design System`
 - **Template source:** `KODA_Slide_Template.pdf · [KODA] 개소식용 소개 자료 v1.1 (공식 발표 템플릿)`
