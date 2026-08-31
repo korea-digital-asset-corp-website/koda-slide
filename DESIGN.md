@@ -146,6 +146,14 @@ components:
     width: "72pt"
     minimumWidth: "60pt"
     placement: "top-left on cover only; top-right on all other slides (TOC, section, content, closing, disclaimer)"
+  partner-logo:
+    source: "slide_assets/partners/"
+    visualHeight: "28~36pt"
+    maximumHeight: "40pt"
+    placement: "Logo wall 카드 중앙. 헤더·KODA 워드마크 자리에는 쓰지 않음"
+    alignment: "한 슬라이드에서 동일 시각 높이, 원본 비율 유지"
+    background: "{colors.canvas} 카드, 1pt {colors.hairline}, {rounded.card}"
+    recolor: "금지. 원본 색상 유지"
   kicker:
     typography: "{typography.data-label}"
     textColor: "{colors.ink-subtle}"
@@ -386,6 +394,29 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 로고 주변에는 최소 로고 심벌 높이만큼 비어 있는 공간을 확보합니다. 이는 공식 clear-space 확인 전의 보수적 운영 규칙입니다.
 - 반전 슬라이드에서는 승인된 흰색 로고 파일이 있을 때만 사용합니다. 없으면 민트 또는 흰 배경 마스터를 선택합니다.
 
+### Partner Logos
+
+주주·파트너 로고는 `slide_assets/partners/`의 지정 파일만 사용합니다. 웹에서 다시 찾거나 새로 그리지 않습니다.
+
+| 기관 | 파일 | 기본 사용 |
+|---|---|---|
+| KB국민은행 | `kb-kookmin-bank.svg` | 가로 워드마크 |
+| 해시드 | `hashed.svg` | 검정 워드마크 |
+| 알토스벤처스 | `altos-ventures.svg` | 남색 워드마크 |
+| 삼성자산운용 | `samsung-asset-management.svg` | 공식 파란 워드마크 |
+| 한화투자증권 | `hanwha-investment-securities.svg` | 심벌 + 한글 워드마크 |
+| 교보증권 | `kyobo-securities.svg` | 심벌 + 한글 워드마크 |
+| IBK캐피탈 | `ibk-capital.svg` | 심벌 + 한글 워드마크 |
+| 해치랩스 | `haechi-labs.svg` | 검정 워드마크 |
+
+- 지정 SVG 파일을 그대로 사용합니다. PNG로 다시 내보내거나 웹에서 대체 파일을 찾지 않습니다.
+- 파트너 로고는 KODA 워드마크와 같은 자리(표지 좌상단·그 외 우상단)에 두지 않습니다. 주주 구성, 파트너, 투자 라운드 등 증거 슬라이드의 Logo wall에만 씁니다.
+- 한 슬라이드에서 시각 높이를 `28~36pt`로 맞추고, `40pt`를 넘기지 않습니다. 가로로 늘이거나 찌그러뜨리지 않습니다.
+- 원본 색상을 유지합니다. KODA 그린으로 다시 칠하거나 회색·단색 실루엣으로 바꾸지 않습니다.
+- 흰 캔버스와 얇은 `{colors.hairline}` 카드 안에 중앙 정렬합니다. 로고 뒤에 색면·그림자·외곽선을 추가하지 않습니다.
+- 파일명·기관명을 바꾸어 호출하지 않습니다. 캡션이 필요하면 로고 아래 `caption`으로 역할만 적습니다. 예: `국내 1위 은행`, `블록체인 기술 기업`.
+- 이 목록에 없는 기관 로고는 요청자가 제공한 공식 파일만 추가하고, 권한 없는 재현은 하지 않습니다.
+
 ### Brand Geometric Shapes
 
 - 로고의 슬래시 마크에서 파생한 평면 기하 도형(기울어진 평행사변형, 원)만 사용합니다.
@@ -401,6 +432,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - UI를 왜곡하거나 중요한 데이터를 crop하지 않습니다.
 - 한 슬라이드에 전체 화면 스크린샷은 1개, 상세 crop은 최대 2개만 사용합니다.
 - 인증 마크와 파트너 로고는 동일한 시각 높이로 정렬하되 원본 비율을 유지합니다.
+- 파트너 로고는 `slide_assets/partners/` 지정 파일을 쓰고, Logo wall 패턴을 따릅니다.
 - 출처와 기준 시점을 해당 수치·차트·인증 자료와 같은 슬라이드에 둡니다.
 
 ## 6. Master Layouts
@@ -459,6 +491,8 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 아이콘: `{colors.brand-highlight}` 단색, `icon-tile` 위 또는 카드 중앙
 - 각 카드는 `제목`(`body-strong`) + `내용` 1~2줄로 균형 유지
 
+주주·파트너 Logo wall은 2×4 또는 4+4 카드 그리드를 쓰고, 각 카드에는 `slide_assets/partners/` 로고만 중앙 정렬합니다. 로고 아래 캡션이 필요하면 `caption` 한 줄만 둡니다.
+
 ### G. Closing (감사합니다)
 
 - Background: `{colors.canvas}` (흰 배경 · 전면 그린 사용 금지)
@@ -496,6 +530,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 | Chart + table | 좌 차트 + 우 표(민트 헤더) | 비교 데이터와 상세 목록 동시 제시 |
 | Icon card grid | 3열 또는 2×3, 아이콘 타일 + 제목/내용 | 기능·특징·원칙 요약 |
 | Logo / cert wall | 얇은 테두리 카드 안에 로고·인증 마크 정렬 | 파트너, 인증, 컴플라이언스 |
+| Shareholder logo wall | `slide_assets/partners/` 로고 8개를 2×4 또는 4+4 카드 그리드로 정렬 | 주주 구성, 투자 라운드, 신뢰 근거 |
 | Callout box | 좌 본문 + 우 녹색 테두리 상자(제목·내용·출처) | 보조 근거·인용 강조 |
 | Product screenshot | 화면 8 columns + 설명 4 columns | 제품 기능, workflow |
 | Diagram | 연한 민트 영역 위 단색 도형·연결선 | 기술 구조(예: MPC 서명) 설명 |
@@ -660,6 +695,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 제목을 `시장 현황`, `서비스 소개` 같은 일반적인 명사로 끝내지 않습니다.
 - 본문을 맞추기 위해 14pt 아래로 자동 축소하지 않습니다.
 - 로고, 인증 마크, 파트너 로고, 브랜드 도형을 왜곡하거나 권한 없이 다시 만들지 않습니다.
+- 파트너 로고를 KODA 그린으로 재색하거나, `slide_assets/partners/` 밖 파일을 임의로 쓰지 않습니다.
 
 ## 15. Quality Checklist
 
@@ -669,6 +705,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 각 슬라이드의 결론이 제목만 읽어도 이어지는가?
 - 모든 수치의 기준일·범위·출처가 준비되어 있는가?
 - 사용 가능한 KODA 로고·브랜드 기하 도형·제품 화면의 권한이 확인되었는가?
+- 주주·파트너 로고가 필요하면 `slide_assets/partners/` 지정 파일을 쓰는가?
 
 ### Visual QA
 
@@ -713,6 +750,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - Source: `{typography.caption}`
 - Card radius: `{rounded.card}`
 - Logo: 표지만 좌상단, 그 외 우상단
+- Partner logos: `slide_assets/partners/`, Logo wall only, 동일 시각 높이
 
 ### Ready-to-use Prompt
 
@@ -726,6 +764,8 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 카드는 얇은 테두리 또는 연한 민트 면으로 절제해 쓰고, 그라디언트·glow·pill·3D chart·
 입체 도형은 쓰지 마세요. 본문을 14pt 아래로 자동 축소하지 말고 콘텐츠를 편집하거나
 슬라이드를 분리하세요. 차트·표·이미지의 접근성, 읽기 순서, PDF 정적 대체까지 검증하세요.
+주주·파트너 로고가 필요하면 slide_assets/partners/의 지정 파일만 쓰고, 원본 비율·색상을
+유지한 채 Logo wall 카드에 동일 시각 높이로 정렬하세요. KODA 워드마크 자리에는 두지 마세요.
 ```
 
 ## 17. Known Gaps
@@ -739,6 +779,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 영문 발표자료의 제목 길이, 줄바꿈, fallback 폰트 렌더링은 별도 검증이 필요합니다.
 - 인쇄용 CMYK, 고대비 모드, 대형 행사 LED wall용 색 보정은 아직 정의하지 않았습니다.
 - 인증 마크, 파트너 로고, 제품 화면의 최신 버전과 개별 사용 권한은 제작 시점에 확인해야 합니다.
+- `altos-ventures.svg`는 고해상도 PNG를 담은 SVG이고, `ibk-capital.svg`의 워드마크 글자는 래스터입니다. 크게 확대하면 선명도가 떨어질 수 있습니다.
 
 ## 18. Source Notes
 
@@ -746,6 +787,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - **Template source:** `KODA_Slide_Template.pdf · [KODA] 개소식용 소개 자료 v1.1 (공식 발표 템플릿)`
 - **Design system:** `figma-claude-connect/theme.js · theme.css — KODA Design System 토큰`
 - **Brand assets:** `slide_assets/Logo.svg · symbol.svg — 공식 워드마크·심볼(브랜드 그린 #00D998)`
+- **Partner logos:** `slide_assets/partners/` — KB국민은행·해시드·알토스벤처스·삼성자산운용·한화투자증권·교보증권·IBK캐피탈·해치랩스
 - **Reference:** `https://www.kodax.com/`
 - **Derived on:** `2026-07-16`
 - **Template aligned on:** `2026-07-17`
@@ -791,6 +833,7 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 
 - 워드마크·심볼(슬래시·원)은 **공식 에셋 파일을 그대로** 사용하고 새로 그리지 않는다. 표지 우측 브랜드 도형도 공식 심볼 에셋을 사용한다.
 - 로고는 **표지만 좌상단**, 그 외 모든 슬라이드는 우상단.
+- 주주·파트너 로고는 `slide_assets/partners/` 지정 파일을 **그대로** 사용한다. KODA 워드마크 자리가 아니라 Logo wall에만 두고, 색·비율을 바꾸지 않는다.
 - 아이콘은 **Remix Icon** 스타일(단색 선형/채움)을 사용한다.
 
 ### 텍스트 · 줄바꿈

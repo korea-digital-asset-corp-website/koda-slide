@@ -3,6 +3,7 @@
 KODA 구성원이 AI와 함께 발표자료를 만들 때 일관된 KODA 브랜딩을 적용할 수 있도록 정리한 발표자료용 디자인 시스템입니다.
 
 이 저장소의 [`DESIGN.md`](./DESIGN.md)에는 슬라이드 비율, 색상, 글꼴, 여백, 레이아웃과 시각 표현 규칙이 담겨 있습니다. [`slide_assets`](./slide_assets) 폴더에는 발표자료에 사용할 KODA 로고와 심볼이 있습니다.
+주주·파트너 로고는 [`slide_assets/partners`](./slide_assets/partners)에 있으며, 발표자료에서 해당 기관을 언급할 때는 이 파일을 사용합니다.
 
 ## 가장 쉬운 시작 방법
 
@@ -22,6 +23,8 @@ AI와 작업 중인 프로젝트에서 다음 중 편한 방법을 사용하세�
 그다음 아래 예시처럼 요청하면 됩니다.
 
 > 첨부한 기획안을 바탕으로 발표자료를 만들어 주세요. KODA 발표 디자인 시스템은 `/내가/저장한/위치/koda-slide`에 있습니다. `DESIGN.md`와 `slide_assets`를 참고해 KODA 브랜딩을 일관되게 적용해 주세요.
+>
+> 주주·파트너를 언급할 때는 `slide_assets/partners`의 지정 로고를 사용하고, `DESIGN.md`의 Partner Logos 규칙을 따라 주세요.
 
 원하는 결과물에 따라 마지막 문장을 덧붙이세요.
 
@@ -61,8 +64,9 @@ ZIP으로 받은 폴더는 Git 저장소가 아니므로 이 기능을 사용할
 ```text
 koda-slide/
 ├── DESIGN.md        # KODA 발표자료 디자인 규칙
-├── slide_assets/    # KODA 로고와 심볼
-├── docs/media/      # AI 앱 활용 예시 영상
+├── slide_assets/     # KODA 로고·심볼
+│   └── partners/     # 주주·파트너 로고
+├── docs/media/       # AI 앱 활용 예시 영상
 ├── AGENTS.md        # Codex·Claude 공통 프로젝트 지침
 ├── CLAUDE.md        # AGENTS.md를 가리키는 Claude용 링크
 ├── .agents/skills/  # 프로젝트 Skill 원본
