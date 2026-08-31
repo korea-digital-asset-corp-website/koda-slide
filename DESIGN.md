@@ -127,100 +127,69 @@ spacing:
 
 components:
   deck-wordmark:
-    width: "72pt"
-    minimumWidth: "60pt"
-    placement: "top-left on cover only; top-right on all other slides (TOC, section, content, closing, disclaimer)"
+    width: "96px"
   partner-logo:
-    source: "slide_assets/partners/"
-    visualHeight: "28~36pt"
-    maximumHeight: "40pt"
-    placement: "Logo wall 카드 중앙. 헤더·KODA 워드마크 자리에는 쓰지 않음"
-    alignment: "한 슬라이드에서 동일 시각 높이, 원본 비율 유지"
-    background: "{colors.canvas} 카드, 1pt {colors.hairline}, {rounded.card}"
-    recolor: "금지. 원본 색상 유지"
+    height: "42.667px"
+  partner-logo-card:
+    backgroundColor: "{colors.canvas}"
+    rounded: "{rounded.card}"
+    padding: "24px"
   kicker:
     typography: "{typography.data-label}"
     textColor: "{colors.ink-subtle}"
-    placement: "top-left, above the slide title"
-    maxLines: 1
-    note: "슬라이드가 속한 주제/섹션을 알려주는 회색 eyebrow 라벨"
   slide-title:
     typography: "{typography.slide-title}"
     textColor: "{colors.ink}"
-    maxLines: 2
-    maxWidth: "720pt"
   source-note:
     typography: "{typography.caption}"
     textColor: "{colors.ink-muted}"
-    position: "bottom-left within safe area"
-    maxLines: 2
   page-number:
     typography: "{typography.caption}"
     textColor: "{colors.ink-muted}"
-    position: "bottom-right"
-  metric-block:
-    valueTypography: "{typography.metric}"
-    valueColor: "{colors.primary}"
-    labelTypography: "{typography.body-strong}"
-    backgroundColor: "transparent"
-    border: "none"
-  evidence-row:
-    backgroundColor: "transparent"
-    borderBottom: "1pt solid {colors.hairline}"
-    padding: "14pt 0"
+  metric-value:
+    typography: "{typography.metric}"
+    textColor: "{colors.primary}"
+  metric-label:
+    typography: "{typography.body-strong}"
+    textColor: "{colors.ink}"
   screenshot-frame:
     backgroundColor: "{colors.canvas}"
     rounded: "{rounded.media}"
-    border: "1pt solid {colors.hairline}"
-    shadow: "none"
-  chart:
-    plotBackground: "transparent"
-    gridColor: "{colors.hairline}"
-    labelColor: "{colors.data-neutral-1}"
-    primarySeries: "{colors.brand-highlight}"
-    emphasisSeries: "{colors.primary}"
-    border: "none"
-    categoricalPalette: "개체 구분이 필요한 비교 차트 예외 (§8 참조)"
-  table:
-    backgroundColor: "transparent"
-    headerBackground: "{colors.brand-highlight-soft}"
-    headerColor: "{colors.ink-strong}"
-    headerBorder: "1.5pt solid {colors.ink-strong}"
-    rowBorder: "0.75pt solid {colors.hairline}"
-    highlightedRow: "{colors.brand-highlight-soft}"
+  table-header:
+    backgroundColor: "{colors.brand-highlight-soft}"
+    textColor: "{colors.ink-strong}"
+    typography: "{typography.body-strong}"
+  table-highlighted-row:
+    backgroundColor: "{colors.brand-highlight-soft}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
   highlight-marker:
-    color: "{colors.brand-highlight-marker}"
+    backgroundColor: "{colors.brand-highlight-marker}"
     height: "0.55em"
-    placement: "핵심 어구 뒤 baseline 근처, 텍스트 하단을 덮는 형광펜 형태"
-    maxPerSlide: 2
-    note: "제목·핵심 문장·차트 핵심 값 등 한두 어구에만 사용; 문장 전체를 덮지 않음"
   brand-shape:
-    fill: "{colors.brand-highlight}"
-    shapes: "슬래시 평행사변형, 원 (KODA 로고 마크에서 파생)"
-    style: "단색 평면, glow·shadow·gradient 없음"
-    placement: "표지 우측, 섹션 전면 등 텍스트와 겹치지 않는 여백"
-  card:
-    backgroundColor: "{colors.canvas} 또는 {colors.brand-highlight-soft}"
-    border: "1pt solid {colors.hairline}"
+    backgroundColor: "{colors.brand-highlight}"
+  card-white:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    shadow: "none"
-    padding: "18~24pt"
-    note: "얇은 테두리 또는 연한 민트 면의 절제된 카드; 그림자·강한 색면은 사용하지 않음"
+    padding: "24px"
+  card-soft:
+    backgroundColor: "{colors.brand-highlight-soft}"
+    textColor: "{colors.ink-strong}"
+    rounded: "{rounded.card}"
+    padding: "24px"
   callout-box:
     backgroundColor: "{colors.canvas}"
-    border: "1pt solid {colors.brand-highlight}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    padding: "18~24pt"
-    note: "보조 설명·출처를 담는 녹색 테두리 상자"
+    padding: "24px"
   icon-tile:
     backgroundColor: "{colors.brand-highlight-soft}"
-    iconColor: "{colors.brand-highlight}"
     rounded: "{rounded.control}"
-    size: "40~56pt"
+    size: "64px"
   contact-row:
     typography: "{typography.body}"
-    iconColor: "{colors.ink-subtle}"
-    placement: "closing 슬라이드 하단, 이메일·전화·텔레그램·웹 순 수평 정렬"
+    textColor: "{colors.ink}"
 ---
 
 # Presentation Design System: KODA
@@ -425,6 +394,28 @@ YAML frontmatter의 `colors` 토큰을 색상값의 단일 기준으로 사용�
 - 출처와 기준 시점을 해당 수치·차트·인증 자료와 같은 슬라이드에 둡니다.
 
 ## 6. Master Layouts
+
+### Shared Component Rules
+
+YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수 있는 배경색, 텍스트색,
+타이포그래피, 모서리, 패딩, 크기만 기록합니다. 배치, 테두리, 정렬, 최대 줄 수와 사용 맥락은
+아래 본문 규칙을 따릅니다.
+
+- `deck-wordmark`: 기본 폭 `72pt`, 최소 폭 `60pt`; 표지만 좌상단, 그 외 슬라이드는 우상단에 둡니다.
+- `kicker`: 제목 위 좌상단에 한 줄만 사용합니다.
+- `slide-title`: 최대 2줄, 최대 폭 `720pt`입니다.
+- `source-note`: safe area 안 좌하단에 최대 2줄로 둡니다.
+- `page-number`: 필요한 슬라이드의 우하단에 둡니다.
+- `metric-value`와 `metric-label`: 배경·테두리 없이 값과 설명을 세로로 정렬합니다.
+- `evidence-row`: 투명 배경, `1pt {colors.hairline}` 하단선, `14pt 0` 패딩을 사용합니다.
+- `screenshot-frame`: `1pt {colors.hairline}` 테두리와 `{rounded.media}`를 사용하고 그림자는 넣지 않습니다.
+- `card-white`: 흰 배경에 `1pt {colors.hairline}` 테두리를 사용합니다.
+- `card-soft`: 연한 민트 배경만 사용하고 테두리는 넣지 않습니다.
+- 두 카드 variant 모두 `{rounded.card}`, `18~24pt` 내부 여백, 그림자 없음이 기본입니다.
+- `callout-box`: 흰 배경, `1pt {colors.green-sub}` 테두리, `{rounded.card}`, `18~24pt` 내부 여백을 사용합니다.
+- `icon-tile`: `40~56pt` 정사각형 안에 `{colors.brand-highlight}` 단색 아이콘을 중앙 정렬합니다.
+- `highlight-marker`: 텍스트 하단 baseline 근처에 놓고 한 슬라이드에서 최대 2개 어구에만 사용합니다.
+- 차트·표·브랜드 도형의 선, 계열색, 배치 규칙은 각각 §8~10과 §19를 따릅니다.
 
 ### A. Cover
 
