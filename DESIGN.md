@@ -502,7 +502,9 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 파트너 로고는 `slide_assets/partners/` 지정 파일을 쓰고, Logo wall 패턴을 따릅니다.
 - 출처와 기준 시점을 해당 수치·차트·인증 자료와 같은 슬라이드에 둡니다.
 
-### A. Cover
+### Master Layouts
+
+#### A. Cover
 
 - Background: `{colors.canvas}`
 - Logo: 좌상단 `84pt`까지 확대 가능
@@ -513,7 +515,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Confidential footer: 하단 좌측, `10pt` `{colors.ink-muted}` 저작권·기밀 고지
 - 페이지 번호는 생략
 
-### B. Table of Contents (목차)
+#### B. Table of Contents (목차)
 
 - Background: `{colors.canvas}`
 - Logo: 우상단
@@ -521,14 +523,14 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - Agenda: 2 columns(좌 01~03, 우 04~06), 각 항목은 번호(`700`) + 짧은 라벨
 - 번호는 검정, 항목 간 간격은 넉넉하게 유지하고 카드·선을 넣지 않음
 
-### C. Section Divider (주제 표지)
+#### C. Section Divider (주제 표지)
 
 - Background: `{colors.brand-highlight}` 전면; 이 전면 그린은 섹션 시작 구분 페이지에만 사용
 - Logo: 우상단 (민트 면에서는 검정)
 - Title: 좌측 세로 중앙, `34pt`, 번호 + 주제명 (예: `01 주제`), 검정 텍스트
 - 페이지 번호는 생략하고, 검정 텍스트 외 장식은 생략하거나 최소화
 
-### D. Content
+#### D. Content
 
 - Background: `{colors.canvas}`
 - Logo: 우상단 `60~72pt`
@@ -540,7 +542,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 레이아웃: 1열, 2열(6:6), 좌 텍스트 + 우 callout-box 등
 - Source: 좌하단
 
-### E. Data / Evidence
+#### E. Data / Evidence
 
 - Kicker + Title은 데이터의 결론을 문장으로 작성
 - 대표 수치 1개는 `56pt` `{colors.brand-highlight}` (더 강한 대비가 필요하면 `{colors.primary}`)
@@ -549,7 +551,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 범례보다 직접 레이블을 우선, 차트 핵심 값에는 하이라이터 바 사용 가능
 - 기준 기간과 출처(`출처`)를 각 요소 하단에 명시
 
-### F. Card Grid
+#### F. Card Grid
 
 - Background: `{colors.canvas}`
 - 3열(카드/아이콘/인증) 또는 2×3 아이콘 그리드
@@ -560,7 +562,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 
 주주·파트너 Logo wall은 2×4 또는 4+4 카드 그리드를 쓰고, 각 카드에는 `slide_assets/partners/` 로고만 중앙 정렬합니다. 로고 아래 캡션이 필요하면 `caption` 한 줄만 둡니다.
 
-### G. Closing (감사합니다)
+#### G. Closing (감사합니다)
 
 - Background: `{colors.canvas}` (흰 배경 · 전면 그린 사용 금지)
 - Logo: 우상단
@@ -571,21 +573,21 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 페이지 번호·각주는 생략한다.
 - 여러 CTA 버튼이나 QR 코드를 동시에 배치하지 않음
 
-### H. Disclaimer
+#### H. Disclaimer
 
 - Background: `{colors.canvas-muted}`
 - Logo: 우상단
 - Title(`Disclaimer`): 좌상단, `56pt` 이상 굵은 검정
 - Body: 법적 고지 문단, `12~14pt` `{colors.ink}`/`{colors.ink-muted}`, 문단 간 여백 확보
 
-### I. Appendix
+#### I. Appendix
 
 - Background: `{colors.canvas}`
 - Title: `22~24pt`
 - Body/table: `14pt`, source: `10pt`
 - 본문 슬라이드보다 밀도를 높일 수 있지만 한 슬라이드에 표 1개 원칙 유지
 
-## Slide Patterns
+### Slide Patterns
 
 | Pattern | Composition | Best use |
 |---|---|---|
@@ -606,35 +608,35 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 | Contact closing | `감사합니다` + 하단 연락처 행 | 미팅 종료·연락처 안내 |
 | Disclaimer | 회색 배경 + 대형 제목 + 법적 고지 문단 | 투자·법적 고지 |
 
-### Highlight Statement
+#### Highlight Statement
 
 - 큰 결론 문장을 좌측에 배치하고 핵심 어구 한두 곳에만 민트 하이라이터 바를 깝니다.
 - 하이라이터는 텍스트 하단을 덮는 형광펜 형태이며, 문장 전체나 여러 줄을 통째로 칠하지 않습니다.
 - 문장 외 다른 강조 색면을 함께 쓰지 않아 하이라이터가 유일한 시선 유도점이 되게 합니다.
 
-### Executive Summary
+#### Executive Summary
 
 - 하나의 세로 목록을 hairline으로 나누거나, 얇은 테두리·연한 민트 카드로 3개 항목을 구분합니다.
 - 각 항목은 2~4단어의 label, 한 문장의 결론, 필요 시 1개 수치로 구성합니다.
 - 세 항목의 시각적 무게를 같게 하되 가장 중요한 수치만 강조합니다.
 
-### Metric Spotlight
+#### Metric Spotlight
 
 - 한 슬라이드의 큰 숫자는 하나만 둡니다.
 - 숫자 아래에는 의미·기준 시점·출처를 순서대로 둡니다.
 - 수치의 소수점 자릿수와 단위는 원 데이터와 동일하게 유지합니다.
 - 숫자를 장식용 원·카드에 넣지 않습니다.
 
-### Process
+#### Process
 
 - 3~5개 단계만 본문에 두고 예외 흐름은 appendix로 이동합니다.
 - 각 단계는 테두리 없는 `{colors.brand-highlight-soft}` 박스 안에 번호와 짧은 동사형 제목을 중앙 정렬하고, 최대 2줄 설명은 박스 아래에 둡니다.
 - 단계 사이에는 Remix Icon `arrow-right-s-line` 셰브론을 사용하고 CSS 도형이나 직접 그린 화살표를 사용하지 않습니다.
 - 강조 단계는 `{colors.brand-highlight-marker}` 면으로 구분합니다.
 
-## Data Visualization
+### Data Visualization
 
-### General Rules
+#### General Rules
 
 - 차트 제목은 주제명이 아니라 결론입니다.
 - 3D 차트, gauge, donut 남용, 장식용 pictogram chart를 사용하지 않습니다.
@@ -644,7 +646,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 한 차트에 최대 4개 계열, grid는 필요한 방향에만 표시합니다.
 - 범례는 가능한 한 제거하고 데이터 선·막대 끝에 직접 레이블을 붙입니다.
 
-### Color Sequence (단일 지표·추세)
+#### Color Sequence (단일 지표·추세)
 
 1. Primary fill/bar: `{colors.brand-highlight}` (KODA 그린); line series는 `{colors.green-sub}`
 2. Emphasis or comparison: `{colors.primary}`
@@ -652,13 +654,13 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 4. Secondary comparison: `#808B87`
 5. Context or remainder: `#B3B9B7`
 
-### Categorical Palette (개체 비교 예외)
+#### Categorical Palette (개체 비교 예외)
 
 - 시장점유율·경쟁사 비교처럼 여러 기관을 구분해야 하는 차트는 각 개체의 식별색을 사용합니다.
 - 이 경우 KODA 그린 단색 규칙을 예외로 적용하되, KODA 자신을 나타내는 조각은 브랜드 그린 또는 검정으로 강조해 구분합니다.
 - 범주형 팔레트에서도 3D·glow·gradient를 쓰지 않고 평면 색면과 직접 레이블을 유지합니다.
 
-### Chart Styling
+#### Chart Styling
 
 - Plot area: transparent
 - Grid: `0.75pt #E8EAE9`
@@ -670,7 +672,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 차트 위 핵심 값·라벨에는 하이라이터 바를 사용할 수 있습니다.
 - 데이터 포인트 강조는 크기 확대보다 직접 레이블과 브랜드 그린을 사용
 
-## Tables
+### Tables
 
 - 표 제목은 슬라이드 제목과 중복하지 않고 표가 증명하는 내용을 설명합니다.
 - Header는 `#E6FBF5` 연한 민트 배경, 600 weight, 하단 `0.75pt #E8EAE9` hairline을 사용합니다.
