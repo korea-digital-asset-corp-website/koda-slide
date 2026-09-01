@@ -242,7 +242,7 @@ components:
 # Presentation Design System: KODA
 
 > - 상태: `초안`
-> - 마지막 검증일: `2026-07-19`
+> - 마지막 검증일: `2026-09-01`
 > - 적용 범위: `PowerPoint · Keynote · Google Slides · PDF 발표자료`
 > - 기준 원본: `KODA Slide Template (공식 발표 템플릿) · KODA Design System (theme.js) · 공식 로고/심볼 에셋 · KODA Public Web Design System`
 
@@ -277,6 +277,33 @@ KODA 발표자료의 목적은 “디지털 자산 기업처럼 보이는 것”
 - 카드는 얇은 테두리·연한 민트 면으로 절제해 사용
 - 차트·표·스크린샷을 장식이 아닌 검증 자료로 사용
 - 3D 차트, 네온 크립토 그래픽, glow·gradient 도형을 사용하지 않음
+
+### Content & Narrative
+
+#### Story Structure
+
+1. 청중이 내려야 할 결정 또는 해결해야 할 문제
+2. 시장·운영 환경과 근거
+3. KODA의 해법과 차별점
+4. 보안·컴플라이언스·성과 증거
+5. 실행 방식과 다음 행동
+
+#### Voice
+
+- 직접적이고 차분하며, 전문적이되 과장하지 않습니다.
+- `혁신적인`, `압도적인`, `최고의` 같은 표현은 수치·출처가 같은 슬라이드에 있을 때만 사용합니다.
+- 제목은 보고서형 명사보다 결론형 문장을 우선합니다.
+- 수치에는 기준일, 범위, 출처를 표시합니다.
+- 법적·보안 표현은 공개 검증 자료의 문구와 범위를 넘겨 확대 해석하지 않습니다.
+
+#### Copy Limits
+
+- Cover: title 42pt 3줄 + subtitle 2줄
+- Section: title 34pt 2줄 + descriptor 2줄
+- Content: title 28pt 2줄 + body 7줄/열
+- Bullets: 최대 5개, 각 2줄
+- Metric: 숫자 1개 + 설명 2줄 + 출처 2줄
+- Closing: statement 3줄 + contact/next step 2줄
 
 ## Colors
 
@@ -684,7 +711,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 본문 슬라이드는 최대 `6 columns × 8 rows`; 그 이상은 appendix로 이동합니다.
 - 표 셀은 최소 `14pt`, 행 높이는 최소 `28pt`입니다.
 
-## Motion & Builds
+### Motion & Builds
 
 - **Principle:** 등장 효과는 발표자의 설명 순서를 돕고 데이터 관계를 드러낼 때만 사용합니다.
 - **Default transition:** `Fade 0.35s`
@@ -693,45 +720,6 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - **Data transition:** 같은 차트의 기간 변화만 `Morph 0.5s` 사용 가능
 - **Avoid:** bounce, fly-in, spin, random bars, sound, 무한 반복 GIF, 긴 video background
 - **Static fallback:** PDF와 reduced-motion 버전에서도 정보가 모두 보이도록 최종 상태를 완결된 레이아웃으로 설계
-
-## Content & Narrative
-
-### Story Structure
-
-1. 청중이 내려야 할 결정 또는 해결해야 할 문제
-2. 시장·운영 환경과 근거
-3. KODA의 해법과 차별점
-4. 보안·컴플라이언스·성과 증거
-5. 실행 방식과 다음 행동
-
-### Voice
-
-- 직접적이고 차분하며, 전문적이되 과장하지 않습니다.
-- `혁신적인`, `압도적인`, `최고의` 같은 표현은 수치·출처가 같은 슬라이드에 있을 때만 사용합니다.
-- 제목은 보고서형 명사보다 결론형 문장을 우선합니다.
-- 수치에는 기준일, 범위, 출처를 표시합니다.
-- 법적·보안 표현은 공개 검증 자료의 문구와 범위를 넘겨 확대 해석하지 않습니다.
-
-### Copy Limits
-
-- Cover: title 42pt 3줄 + subtitle 2줄
-- Section: title 34pt 2줄 + descriptor 2줄
-- Content: title 28pt 2줄 + body 7줄/열
-- Bullets: 최대 5개, 각 2줄
-- Metric: 숫자 1개 + 설명 2줄 + 출처 2줄
-- Closing: statement 3줄 + contact/next step 2줄
-
-## Accessibility & Delivery
-
-- 기본 본문은 `18pt`, 보조 본문은 `14pt` 이상을 유지합니다.
-- 출처와 각주도 `10pt` 미만으로 줄이지 않습니다.
-- 제목·본문·차트의 읽기 순서를 슬라이드 객체 순서에 반영합니다.
-- 모든 의미 있는 이미지, 차트, 스크린샷에 대체 텍스트를 제공합니다.
-- 색상 외에 직접 레이블, 선 스타일, 값, 아이콘 형태로 계열을 구분합니다.
-- 동영상에는 자막 또는 핵심 내용을 설명하는 정적 대체 슬라이드를 제공합니다.
-- 링크 텍스트는 목적을 설명하고 긴 URL은 source note나 notes로 이동합니다.
-- 발표 전 1080p 화면, 화상회의 공유, 흑백 PDF에서 각각 가독성을 확인합니다.
-- PPTX와 함께 폰트가 포함된 PDF를 전달합니다.
 
 ## Do's and Don'ts
 
@@ -757,9 +745,21 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 로고, 심볼, 인증 마크, 파트너 로고를 왜곡하거나 권한 없이 다시 만들지 않습니다.
 - 파트너 로고를 KODA 그린으로 재색하거나, `slide_assets/partners/` 밖 파일을 임의로 쓰지 않습니다.
 
-## Quality Checklist
+### Accessibility & Delivery
 
-### Before Design
+- 기본 본문은 `18pt`, 보조 본문은 `14pt` 이상을 유지합니다.
+- 출처와 각주도 `10pt` 미만으로 줄이지 않습니다.
+- 제목·본문·차트의 읽기 순서를 슬라이드 객체 순서에 반영합니다.
+- 모든 의미 있는 이미지, 차트, 스크린샷에 대체 텍스트를 제공합니다.
+- 색상 외에 직접 레이블, 선 스타일, 값, 아이콘 형태로 계열을 구분합니다.
+- 동영상에는 자막 또는 핵심 내용을 설명하는 정적 대체 슬라이드를 제공합니다.
+- 링크 텍스트는 목적을 설명하고 긴 URL은 source note나 notes로 이동합니다.
+- 발표 전 1080p 화면, 화상회의 공유, 흑백 PDF에서 각각 가독성을 확인합니다.
+- PPTX와 함께 폰트가 포함된 PDF를 전달합니다.
+
+### Quality Checklist
+
+#### Before Design
 
 - 청중과 의사결정 목적이 한 문장으로 정의되어 있는가?
 - 각 슬라이드의 결론이 제목만 읽어도 이어지는가?
@@ -767,7 +767,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - KODA 로고·심볼은 `slide_assets/` 원본을 쓰고, 제품 화면의 사용 권한이 확인되었는가?
 - 주주·파트너 로고가 필요하면 `slide_assets/partners/` 지정 파일을 쓰는가?
 
-### Visual QA
+#### Visual QA
 
 - 모든 요소가 12-column 축에 정렬되어 있는가?
 - 제목은 2줄, 본문은 열당 7줄 이내인가?
@@ -776,14 +776,14 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - 모든 테두리·구분선이 `2px` 미만이며 밝은 브랜드 그린을 선에 쓰지 않았는가?
 - 차트와 표의 label이 발표 화면에서 읽히는가?
 
-### Content QA
+#### Content QA
 
 - 주장과 증거가 같은 슬라이드에 있는가?
 - 수치 단위와 소수점이 일관적인가?
 - 공개 자료의 범위를 넘는 법적·보안 주장이 없는가?
 - speaker notes와 appendix로 옮길 세부 정보가 남아 있지 않은가?
 
-### Export QA
+#### Export QA
 
 - 16:9 비율과 safe area가 유지되는가?
 - Pretendard가 설치되지 않은 환경에서도 PDF가 동일하게 보이는가?
@@ -856,6 +856,7 @@ YAML frontmatter의 `components`에는 DESIGN.md 도구가 검증·내보낼 수
 - **Derived on:** `2026-07-16`
 - **Template aligned on:** `2026-07-17`
 - **DS·assets aligned on:** `2026-07-19`
+- **DESIGN.md format validated on:** `2026-09-01` (`@google/design.md 0.4.0`)
 - **Directly inherited:** 브랜드 색상, Pretendard/Inter, 넓은 흰 캔버스, 증거 중심 구성, hairline 사용, 제한된 녹색 강조
 - **From slide template:** 밝은 KODA 그린 중심 팔레트, 공식 브랜드 심볼, 민트 하이라이터 바, kicker + 제목 + 우상단 로고 구조, 목차·Disclaimer·연락처 마감 레이아웃, 절제된 카드, 민트 표 헤더, 범주형 차트 예외
 - **Presentation adaptations:** 16:9 format, pt 기반 type scale, 12-column grid, master layouts, chart/table rules, slide motion, copy limits, delivery QA
