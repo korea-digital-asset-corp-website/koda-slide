@@ -222,7 +222,7 @@ components:
     height: "1.333px"
   callout-accent-bar:
     backgroundColor: "{colors.green-sub}"
-    width: "4px"
+    width: "3px"
   danger-accent:
     backgroundColor: "{colors.danger}"
     width: "1.333px"
@@ -451,7 +451,7 @@ PowerPoint·Keynote·Google Slides 제작에서는 아래 본문과 표에 적�
 |---|---|---|
 | KB국민은행 | `kb-kookmin-bank.svg` | 가로 워드마크 |
 | 해시드 | `hashed.svg` | 검정 워드마크 |
-| 알토스벤처스 | `altos-ventures.svg` | 남색 워드마크 |
+| 알토스벤처스 | `altos-ventures.svg` | 흑백 워드마크 |
 | 삼성자산운용 | `samsung-asset-management.svg` | 공식 파란 워드마크 |
 | 한화투자증권 | `hanwha-investment-securities.svg` | 심벌 + 한글 워드마크 |
 | 교보증권 | `kyobo-securities.svg` | 심벌 + 한글 워드마크 |
